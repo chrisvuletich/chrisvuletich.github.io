@@ -171,7 +171,7 @@ export const books: Book[] = [
 		id: 'the-lion-the-witch-and-the-wardrobe',
 		title: 'The Lion, the Witch and the Wardrobe',
 		author: 'C. S. Lewis',
-		yearRead: 2026,
+		yearRead: null,
 		pageCount: null,
 		rating: null,
 		status: 'paused',
