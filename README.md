@@ -1,42 +1,21 @@
-# sv
+# Christopher Vuletich — Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Source code for [vuletich.dev](https://vuletich.dev), the personal portfolio of Christopher Vuletich. The site documents selected software projects, including Rocky, TowTruck Alert, and OneTask CLI.
 
-## Creating a project
+## Built with
 
-If you're seeing this, you've probably already done this step. Congrats!
+- SvelteKit 5 and TypeScript
+- Plain CSS with a responsive editorial design system
+- `@sveltejs/adapter-static` for static-site generation
+- GitHub Pages and GitHub Actions for deployment
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Adding a Book
 
-To recreate this project with the same configuration:
+1. Open `src/lib/data/books.ts` and copy the example object in its header comment.
+2. Fill in the required fields, then add optional review, tags, and metadata.
+3. Optionally add a local cover under `static/images/books/` and set its path in the book object.
+4. Run `npm run check` and `npm run build` before committing and pushing.
 
-```sh
-# recreate this project
-npx sv@0.16.3 create --template minimal --types ts --install npm .
-```
+## License
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This repository contains personal portfolio content. Please do not reuse the written content or visual design as your own.

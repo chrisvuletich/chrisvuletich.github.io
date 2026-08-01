@@ -8,7 +8,8 @@
 		{ href: resolve('/'), label: 'Home' },
 		{ href: resolve('/projects'), label: 'Projects' },
 		{ href: resolve('/about'), label: 'About' },
-		{ href: resolve('/contact'), label: 'Contact' }
+		{ href: resolve('/contact'), label: 'Contact' },
+		{ href: resolve('/books'), label: 'Books' }
 	];
 
 	function isCurrent(href: string) {
