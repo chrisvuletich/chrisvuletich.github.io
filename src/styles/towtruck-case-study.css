@@ -1,0 +1,124 @@
+.towtruck-case-study {
+	padding: clamp(3rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 7rem);
+}
+.towtruck-hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+	gap: clamp(2.5rem, 8vw, 8rem);
+	padding: 2.3rem 0 clamp(3.5rem, 7vw, 6rem);
+	border-bottom: 1px solid var(--line-strong);
+}
+.towtruck-hero h1 {
+	margin: 0.55rem 0 0;
+	font-family: var(--serif);
+	font-size: clamp(4.5rem, 9vw, 8.5rem);
+	font-weight: 400;
+	line-height: 0.84;
+	letter-spacing: -0.065em;
+}
+.towtruck-hero > div > p:not(.eyebrow) {
+	max-width: 42rem;
+	margin: 1.5rem 0 0;
+	color: var(--ink-muted);
+	font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+	line-height: 1.65;
+}
+.vision-flow {
+	display: grid;
+	justify-items: center;
+	gap: 0.38rem;
+	padding: clamp(1.2rem, 3vw, 2rem);
+	border: 1px solid var(--line-strong);
+	background: rgba(235, 224, 208, 0.42);
+	text-align: center;
+}
+.vision-flow div {
+	width: min(100%, 27rem);
+	padding: 0.66rem 1rem;
+	border: 1px solid var(--line-strong);
+	background: var(--paper);
+	font-size: 0.86rem;
+}
+.vision-flow div:nth-of-type(3) {
+	border-color: var(--rust);
+}
+.vision-flow span {
+	color: var(--rust);
+	font-family: var(--mono);
+}
+.learning-timeline {
+	display: grid;
+	gap: 0;
+	margin: clamp(2rem, 5vw, 4rem) 0 0;
+	padding: 0;
+	list-style: none;
+}
+.learning-timeline li {
+	display: grid;
+	grid-template-columns: 6rem minmax(0, 1fr);
+	gap: 1.25rem;
+	padding: 1.4rem 0;
+	border-top: 1px solid var(--line);
+}
+.learning-timeline h3 {
+	margin: 0;
+	font-family: var(--serif);
+	font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+	font-weight: 400;
+	line-height: 1;
+}
+.learning-timeline li div > p {
+	max-width: 43rem;
+	margin: 0.8rem 0 0;
+	color: var(--ink-muted);
+	line-height: 1.65;
+}
+.two-lists details {
+	padding-top: 1.3rem;
+	border-top: 1px solid var(--line);
+}
+.two-lists summary {
+	cursor: pointer;
+	color: var(--rust);
+	font: 0.72rem var(--mono);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+.two-lists details .tag-list {
+	margin-top: 1rem;
+}
+.towtruck-takeaway {
+	margin-top: clamp(3.5rem, 7vw, 6rem);
+	padding: clamp(2rem, 5vw, 4rem);
+	border: 1px solid var(--line-strong);
+	background: var(--paper-deep);
+}
+.towtruck-takeaway h2 {
+	max-width: 18ch;
+	margin: 0.5rem 0 0;
+	font-family: var(--serif);
+	font-size: clamp(2.4rem, 5vw, 4.5rem);
+	font-weight: 400;
+	line-height: 0.95;
+	letter-spacing: -0.05em;
+}
+.towtruck-takeaway > p:not(.eyebrow) {
+	max-width: 43rem;
+	margin: 1rem 0 1.6rem;
+	color: var(--ink-muted);
+	line-height: 1.65;
+}
+@media (max-width: 800px) {
+	.towtruck-hero {
+		grid-template-columns: 1fr;
+	}
+	.learning-timeline li {
+		grid-template-columns: 4rem minmax(0, 1fr);
+	}
+}
+@media (max-width: 580px) {
+	.learning-timeline li {
+		grid-template-columns: 1fr;
+		gap: 0.65rem;
+	}
+}

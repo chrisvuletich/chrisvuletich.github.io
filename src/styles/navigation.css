@@ -1,0 +1,120 @@
+.site-header {
+	position: relative;
+	z-index: 5;
+	border-bottom: 1px solid var(--line);
+}
+.site-header__inner,
+.site-footer__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	width: var(--container);
+	margin: 0 auto;
+}
+.site-header__inner {
+	min-height: 4.25rem;
+}
+.site-mark {
+	font-family: var(--serif);
+	font-size: 1.35rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+.site-mark span {
+	color: var(--rust);
+}
+.site-nav {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+}
+.site-nav a {
+	position: relative;
+	padding: 0.35rem 0;
+	color: var(--ink-muted);
+	font-size: 0.85rem;
+	text-decoration: none;
+}
+.site-nav a::after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 1px;
+	background: var(--ink);
+	content: '';
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform var(--transition);
+}
+.site-nav a:hover::after,
+.site-nav a[aria-current='page']::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+.site-nav a[aria-current='page'] {
+	color: var(--ink);
+}
+.menu-toggle {
+	display: none;
+	border: 0;
+	color: var(--ink);
+	background: transparent;
+	font: 0.75rem var(--mono);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+.site-footer {
+	border-top: 1px solid var(--line);
+}
+.site-footer__inner {
+	padding: 1.5rem 0;
+	color: var(--ink-muted);
+	font-size: 0.75rem;
+}
+.site-footer p {
+	display: flex;
+	gap: 0.45rem;
+	margin: 0;
+}
+.site-footer strong {
+	color: var(--ink);
+}
+.site-footer a {
+	color: var(--ink);
+	text-decoration: none;
+}
+@media (max-width: 650px) {
+	.menu-toggle {
+		display: block;
+	}
+	.site-nav {
+		position: absolute;
+		top: 100%;
+		right: 1rem;
+		left: 1rem;
+		display: none;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		padding: 0.6rem 1rem;
+		border: 1px solid var(--line-strong);
+		background: var(--paper);
+		box-shadow: 0 10px 25px rgba(50, 40, 28, 0.1);
+	}
+	.site-nav--open {
+		display: flex;
+	}
+	.site-nav a {
+		padding: 0.85rem 0;
+	}
+	.site-footer__inner {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.site-footer p {
+		flex-wrap: wrap;
+	}
+}
