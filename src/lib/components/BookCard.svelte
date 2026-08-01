@@ -25,9 +25,14 @@
 		</div>
 		<div class="book-card__copy">
 			<p class="book-card__meta">
-				{#if book.status !== 'read'}{book.status === 'currently-reading'
+				{book.status === 'read'
+					? 'Read'
+					: book.status === 'currently-reading'
 						? 'Currently reading'
-						: 'Did not finish'}{/if}{#if book.favorite}<span aria-label="Favorite">★</span>{/if}
+						: book.status === 'paused'
+							? 'Paused'
+							: 'Did not finish'}{#if book.favorite}<span aria-label="Favorite">★ Favorite</span
+					>{/if}
 			</p>
 			<h2>{book.title}</h2>
 			<p class="book-card__author">{book.author}</p>

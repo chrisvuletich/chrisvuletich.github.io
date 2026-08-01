@@ -39,6 +39,10 @@ export function sortBooks(items: Book[], sort: SortOption) {
 		if (sort === 'author') return a.author.localeCompare(b.author);
 		if (sort === 'rating-desc') return (b.rating ?? -1) - (a.rating ?? -1);
 		if (sort === 'pages-desc') return (b.pageCount ?? -1) - (a.pageCount ?? -1);
+		if (sort === 'date-desc' && a.status !== b.status) {
+			if (a.status === 'currently-reading') return -1;
+			if (b.status === 'currently-reading') return 1;
+		}
 		const aDate = a.dateFinished ?? '';
 		const bDate = b.dateFinished ?? '';
 		return sort === 'date-asc' ? aDate.localeCompare(bDate) : bDate.localeCompare(aDate);

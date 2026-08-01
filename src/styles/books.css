@@ -215,6 +215,34 @@
 	margin: 0.45rem 0 0;
 	font: 400 clamp(2.4rem, 5vw, 4.5rem)/0.95 var(--serif);
 }
+.library-filters {
+	margin-top: 1.5rem;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+}
+.library-filters summary {
+	cursor: pointer;
+	padding: 0.9rem 0;
+	color: var(--rust);
+	font: 0.72rem var(--mono);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	list-style: none;
+}
+.library-filters summary::-webkit-details-marker {
+	display: none;
+}
+.library-filters summary::after {
+	margin-left: 0.5rem;
+	content: '+';
+}
+.library-filters[open] summary::after {
+	content: '−';
+}
+.library-filters .book-controls {
+	margin-top: 0;
+	border-top: 0;
+}
 .view-toggle {
 	display: flex;
 	gap: 0.4rem;

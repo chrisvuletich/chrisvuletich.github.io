@@ -1,4 +1,4 @@
-export type BookStatus = 'read' | 'currently-reading' | 'did-not-finish';
+export type BookStatus = 'read' | 'currently-reading' | 'paused' | 'did-not-finish';
 export type BookFormat = 'kindle' | 'hardcover' | 'paperback' | 'audiobook' | 'other';
 export type Ownership = 'own' | 'borrowed' | 'library' | 'digital' | 'unknown';
 
