@@ -141,15 +141,25 @@ export const books: Book[] = [
 		id: 'red-rising',
 		title: 'Red Rising',
 		author: 'Pierce Brown',
-		yearRead: null,
-		pageCount: null,
+		yearRead: 2026,
+		pageCount: 401,
 		rating: null,
-		status: 'next-up',
+		status: 'currently-reading',
+		genre: 'Dystopian Science Fiction',
+		tags: [
+			'science-fiction',
+			'dystopian',
+			'space-opera',
+			'rebellion',
+			'adventure',
+			'red-rising-saga'
+		],
+		format: 'kindle',
 		cover: '/images/books/red-rising.webp',
 		coverAlt: 'Cover of Red Rising by Pierce Brown',
 		favorite: false,
 		reread: false,
-		ownership: 'unknown'
+		ownership: 'digital'
 	},
 	{
 		id: 'ghost-in-the-wires',

@@ -41,7 +41,7 @@
 		)
 	);
 	const summary = $derived(stats(booksForStats));
-	const nightstandBooks = $derived(books.filter((book) => book.status === 'next-up'));
+	const nightstandBooks = $derived(books.filter((book) => book.status === 'currently-reading'));
 	function clearLibraryFilters() {
 		selectedLibraryYear = availableYears[0] ?? 'all';
 		librarySearch = '';
