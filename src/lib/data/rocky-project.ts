@@ -1,4 +1,4 @@
-export const rockyCaseStudy = {
+export const rockyProject = {
 	role: 'Frontend Developer & Software Engineering Intern',
 	timeline: [
 		[

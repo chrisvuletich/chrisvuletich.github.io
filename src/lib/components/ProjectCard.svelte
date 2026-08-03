@@ -29,7 +29,5 @@
 	<ul class="tag-list" aria-label={`${project.title} technologies`}>
 		{#each project.technologies as technology (technology)}<li>{technology}</li>{/each}
 	</ul>
-	<p class="project-card__card-action">
-		{project.slug === 'rocky' ? 'View case study' : 'Explore project'} →
-	</p>
+	<p class="project-card__card-action">Explore project →</p>
 </article>

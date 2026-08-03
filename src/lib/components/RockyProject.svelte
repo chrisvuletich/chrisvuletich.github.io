@@ -1,12 +1,14 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { rockyCaseStudy as study } from '$lib/data/rocky-case-study';
+	import { base, resolve } from '$app/paths';
+	import BeforeAfterComparison from '$lib/components/BeforeAfterComparison.svelte';
+	import { rockyProject as study } from '$lib/data/rocky-project';
+	import { rockyEvolution } from '$lib/data/rocky-evolution';
 </script>
 
 <main class="case-study page">
 	<header class="case-hero">
 		<div>
-			<p class="eyebrow">Case study / team project</p>
+			<p class="eyebrow">Team project</p>
 			<h1>Rocky</h1>
 			<p class="case-hero__summary">
 				A course-based AI platform that gives students managed access to AI services and chat, while
@@ -92,9 +94,65 @@
 		</div>
 	</section>
 
+	<section class="case-section project-evolution" aria-labelledby="evolution-title">
+		<p class="eyebrow">05 / Project evolution</p>
+		<h2 id="evolution-title">Project Evolution</h2>
+		<p class="project-evolution__intro">
+			These comparisons show how Rocky’s interface developed during the project, from early working
+			screens to a more cohesive application experience.
+		</p>
+		<div class="project-evolution__grid">
+			{#each rockyEvolution as comparison (comparison.id)}
+				<article class="evolution-comparison">
+					<div class="evolution-comparison__heading">
+						<h3>{comparison.title}</h3>
+						<p>{comparison.description}</p>
+					</div>
+					<BeforeAfterComparison
+						title={comparison.title}
+						beforeSrc={`${base}${comparison.before}`}
+						afterSrc={`${base}${comparison.after}`}
+					/>
+				</article>
+			{/each}
+		</div>
+
+		<details class="rocky-gallery">
+			<summary>View Full Gallery</summary>
+			<div class="rocky-gallery__content">
+				<p>Explore each screen side by side, from the original interface to the later iteration.</p>
+				<div class="rocky-gallery__grid">
+					{#each rockyEvolution as comparison (comparison.id)}
+						<article class="gallery-pair">
+							<h3>{comparison.title}</h3>
+							<div class="gallery-pair__images">
+								<figure>
+									<img
+										src={`${base}${comparison.before}`}
+										alt={`Before: ${comparison.title} interface`}
+										draggable="false"
+									/>
+									<figcaption>Before</figcaption>
+								</figure>
+								<figure>
+									<img
+										src={`${base}${comparison.after}`}
+										alt={`After: ${comparison.title} interface`}
+										draggable="false"
+									/>
+									<figcaption>After</figcaption>
+								</figure>
+							</div>
+						</article>
+					{/each}
+				</div>
+			</div>
+		</details>
+	</section>
+
 	<section class="case-section case-section--split" aria-labelledby="architecture-title">
 		<div>
-			<p class="eyebrow">05 / Architecture</p>
+			<p class="eyebrow">06 / Architecture</p>
 			<h2 id="architecture-title">How Rocky handled AI requests.</h2>
 		</div>
 		<div>
@@ -132,7 +190,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="challenges-title">
-		<p class="eyebrow">06 / Engineering challenges</p>
+		<p class="eyebrow">07 / Engineering challenges</p>
 		<h2 id="challenges-title">Where the work got more interesting.</h2>
 		<div class="challenge-list">
 			{#each study.challenges as [title, text] (title)}<article>
@@ -144,7 +202,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="stack-title">
 		<div>
-			<p class="eyebrow">07 / Technology</p>
+			<p class="eyebrow">08 / Technology</p>
 			<h2 id="stack-title">Tools I used, and systems I worked alongside.</h2>
 		</div>
 		<div class="stack-groups">
@@ -169,7 +227,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="results-title">
 		<div>
-			<p class="eyebrow">08 / Outcomes & learning</p>
+			<p class="eyebrow">09 / Outcomes & learning</p>
 			<h2 id="results-title">A first sustained experience across service boundaries.</h2>
 		</div>
 		<div class="two-lists">

@@ -2,7 +2,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import OneTaskCaseStudy from '$lib/components/OneTaskCaseStudy.svelte';
-	import RockyCaseStudy from '$lib/components/RockyCaseStudy.svelte';
+	import RockyProject from '$lib/components/RockyProject.svelte';
 	import TowTruckCaseStudy from '$lib/components/TowTruckCaseStudy.svelte';
 	import type { PageData } from './$types';
 	let { data }: { data: PageData } = $props();
@@ -21,7 +21,7 @@
 </svelte:head>
 
 {#if project.slug === 'rocky'}
-	<RockyCaseStudy />
+	<RockyProject />
 {:else if project.slug === 'onetask-cli'}
 	<OneTaskCaseStudy />
 {:else if project.slug === 'towtruck-alert'}
