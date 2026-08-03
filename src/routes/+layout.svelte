@@ -1,5 +1,5 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import { base } from '$app/paths';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import '../app.css';
@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
 	<meta name="theme-color" content="#f4eee3" />
 </svelte:head>
 
