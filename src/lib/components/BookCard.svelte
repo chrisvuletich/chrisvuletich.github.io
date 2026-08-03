@@ -29,9 +29,11 @@
 					? 'Read'
 					: book.status === 'currently-reading'
 						? 'Currently reading'
-						: book.status === 'paused'
-							? 'Paused'
-							: 'Did not finish'}{#if book.favorite}<span aria-label="Favorite">★ Favorite</span
+						: book.status === 'next-up'
+							? 'Next up'
+							: book.status === 'paused'
+								? 'Paused'
+								: 'Did not finish'}{#if book.favorite}<span aria-label="Favorite">★ Favorite</span
 					>{/if}
 			</p>
 			<h2>{book.title}</h2>

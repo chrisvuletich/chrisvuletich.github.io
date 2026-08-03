@@ -41,7 +41,7 @@
 		)
 	);
 	const summary = $derived(stats(booksForStats));
-	const currentlyReading = $derived(books.filter((book) => book.status === 'currently-reading'));
+	const nightstandBooks = $derived(books.filter((book) => book.status === 'next-up'));
 	function clearLibraryFilters() {
 		selectedLibraryYear = availableYears[0] ?? 'all';
 		librarySearch = '';
@@ -106,14 +106,14 @@
 				>{summary.finished} of {readingGoals[selectedStatsYear]}</progress
 			>
 		</section>{/if}
-	{#if currentlyReading.length}<section class="nightstand" aria-labelledby="nightstand-title">
+	{#if nightstandBooks.length}<section class="nightstand" aria-labelledby="nightstand-title">
 			<div>
 				<p class="eyebrow">A warm corner</p>
 				<h2 id="nightstand-title">On the nightstand</h2>
 				<p>Books currently keeping me company.</p>
 			</div>
 			<ul>
-				{#each currentlyReading as book (book.id)}<li
+				{#each nightstandBooks as book (book.id)}<li
 						style={`--book-accent:${book.accent ?? '#8c684b'}`}
 					>
 						<div class="nightstand__spine">
@@ -153,8 +153,8 @@
 					>Status <select bind:value={libraryStatus}
 						><option value="all">All</option><option value="read">Read</option><option
 							value="currently-reading">Currently Reading</option
-						><option value="paused">Paused</option><option value="did-not-finish"
-							>Did Not Finish</option
+						><option value="next-up">Next Up</option><option value="paused">Paused</option><option
+							value="did-not-finish">Did Not Finish</option
 						></select
 					></label
 				>
