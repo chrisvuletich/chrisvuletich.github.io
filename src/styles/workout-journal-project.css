@@ -1,0 +1,189 @@
+.workout-journal {
+	padding: clamp(3rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 7rem);
+}
+.workout-journal__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+	gap: clamp(2.5rem, 8vw, 8rem);
+	padding: 2.3rem 0 clamp(3.5rem, 7vw, 6rem);
+	border-bottom: 1px solid var(--line-strong);
+}
+.workout-journal__hero h1 {
+	margin: 0.55rem 0 0;
+	font-family: var(--serif);
+	font-size: clamp(4.2rem, 9vw, 8.5rem);
+	font-weight: 400;
+	line-height: 0.84;
+	letter-spacing: -0.065em;
+}
+.workout-journal__subtitle {
+	margin: 1.2rem 0 0;
+	color: var(--rust);
+	font: 0.75rem var(--mono);
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+.workout-journal__status {
+	display: inline-block;
+	margin: 0.9rem 0 0;
+	padding: 0.35rem 0.5rem;
+	border: 1px solid var(--moss);
+	color: var(--moss);
+	font: 0.65rem var(--mono);
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+.workout-journal__summary {
+	max-width: 44rem;
+	margin: 1.35rem 0 0;
+	color: var(--ink-muted);
+	font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+	line-height: 1.65;
+}
+.workout-journal__facts,
+.workout-journal__sidebar dl {
+	display: grid;
+	align-content: end;
+	gap: 1rem;
+	margin: 0;
+}
+.workout-journal__facts div,
+.workout-journal__sidebar dl div {
+	padding-top: 0.75rem;
+	border-top: 1px solid var(--line);
+}
+.workout-journal__facts dt,
+.workout-journal__sidebar dt {
+	color: var(--rust);
+	font: 0.68rem var(--mono);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.workout-journal__facts dd,
+.workout-journal__sidebar dd {
+	margin: 0.42rem 0 0;
+	color: var(--ink);
+	font-size: 0.92rem;
+	line-height: 1.5;
+}
+.workout-journal__content {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.26fr);
+	gap: clamp(2.5rem, 8vw, 8rem);
+}
+.workout-journal__main {
+	min-width: 0;
+}
+.workout-journal__section {
+	padding: clamp(3.5rem, 7vw, 6rem) 0;
+	border-bottom: 1px solid var(--line);
+}
+.workout-journal__section h2 {
+	max-width: 20ch;
+	margin: 0.55rem 0 0;
+	font-family: var(--serif);
+	font-size: clamp(2.35rem, 4.5vw, 4.6rem);
+	font-weight: 400;
+	line-height: 0.94;
+	letter-spacing: -0.055em;
+}
+.workout-journal__prose {
+	max-width: 44rem;
+	margin-top: clamp(1.5rem, 3vw, 2.4rem);
+}
+.workout-journal__prose p {
+	margin: 0;
+	color: var(--ink-muted);
+	font-size: 1rem;
+	line-height: 1.75;
+}
+.workout-journal__prose p + p {
+	margin-top: 1.15rem;
+}
+.workout-journal__feature-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.8rem;
+	margin-top: clamp(2rem, 4vw, 3rem);
+}
+.workout-journal__feature-grid article {
+	display: grid;
+	min-height: 7.2rem;
+	align-items: end;
+	padding: 1.1rem;
+	border: 1px solid var(--line-strong);
+	background: rgba(255, 253, 247, 0.42);
+}
+.workout-journal__feature-grid h3 {
+	margin: 0;
+	font-family: var(--serif);
+	font-size: 1.35rem;
+	font-weight: 400;
+	line-height: 1.05;
+}
+.workout-journal__sidebar {
+	align-self: start;
+	position: sticky;
+	top: 2rem;
+	margin-top: clamp(3.5rem, 7vw, 6rem);
+	padding: 1.25rem;
+	border: 1px solid var(--line-strong);
+	background: rgba(235, 224, 208, 0.32);
+}
+.workout-journal__sidebar dl {
+	margin-top: 1.25rem;
+}
+.workout-journal__screenshots {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: clamp(2rem, 4vw, 3rem);
+}
+.workout-journal__screenshots article {
+	display: grid;
+	gap: 0.75rem;
+	min-width: 0;
+}
+.workout-journal__screenshots img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	border: 1px solid var(--line-strong);
+	background: var(--paper-deep);
+	object-fit: contain;
+	user-select: none;
+	-webkit-user-drag: none;
+}
+.workout-journal__screenshots strong {
+	color: var(--rust);
+	font-family: var(--serif);
+	font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+	font-weight: 400;
+}
+@media (max-width: 800px) {
+	.workout-journal__hero,
+	.workout-journal__content {
+		grid-template-columns: 1fr;
+	}
+	.workout-journal__facts {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	.workout-journal__sidebar {
+		position: static;
+		margin-top: 0;
+	}
+	.workout-journal__sidebar dl {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+@media (max-width: 580px) {
+	.workout-journal__facts,
+	.workout-journal__feature-grid,
+	.workout-journal__screenshots,
+	.workout-journal__sidebar dl {
+		grid-template-columns: 1fr;
+	}
+	.workout-journal__section h2 {
+		max-width: 16ch;
+	}
+}

@@ -4,6 +4,7 @@
 	import OneTaskCaseStudy from '$lib/components/OneTaskCaseStudy.svelte';
 	import RockyProject from '$lib/components/RockyProject.svelte';
 	import TowTruckCaseStudy from '$lib/components/TowTruckCaseStudy.svelte';
+	import WorkoutJournalProject from '$lib/components/WorkoutJournalProject.svelte';
 	import type { PageData } from './$types';
 	let { data }: { data: PageData } = $props();
 	const project = $derived(data.project);
@@ -26,6 +27,8 @@
 	<OneTaskCaseStudy />
 {:else if project.slug === 'towtruck-alert'}
 	<TowTruckCaseStudy />
+{:else if project.slug === 'workout-journal'}
+	<WorkoutJournalProject />
 {:else}
 	<main class="page">
 		<a class="back-link" href={resolve('/projects')}>← Back to projects</a>
