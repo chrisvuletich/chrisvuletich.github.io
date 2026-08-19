@@ -49,6 +49,29 @@
 		</aside>
 	</section>
 
+	<section class="sidequest-feature" aria-labelledby="sidequest-feature-title">
+		<div class="sidequest-feature__content">
+			<p class="sidequest-feature__label">SideQuest <span aria-hidden="true">✦</span></p>
+			<h2 id="sidequest-feature-title">Don’t know what to do? Find a SideQuest.</h2>
+			<p>
+				SideQuest gives you an activity when you want to get out, try something different, or just
+				make an ordinary day more interesting.
+			</p>
+			<div class="sidequest-feature__actions">
+				<a class="button sidequest-feature__primary" href={resolve('/sidequest')}
+					>Try SideQuest <span aria-hidden="true">→</span></a
+				>
+				<a class="button sidequest-feature__secondary" href={resolve('/projects/sidequest')}
+					>See how I built it</a
+				>
+			</div>
+		</div>
+		<div class="sidequest-feature__trail-mark" aria-hidden="true">
+			<span>✦</span>
+			<i></i>
+		</div>
+	</section>
+
 	<section class="section section--featured" aria-labelledby="featured-title">
 		<div class="section-heading">
 			<div>
