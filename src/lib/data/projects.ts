@@ -1,8 +1,19 @@
 export type ProjectStatus =
-	'In Progress' | 'V1 Complete' | 'Completed' | 'v0.2 In Progress' | 'Active Personal Project';
+	| 'In Progress'
+	| 'V1 Complete'
+	| 'Completed'
+	| 'v0.2 In Progress'
+	| 'Active Personal Project'
+	| 'Active / In Development';
 
 export type Project = {
-	slug: 'rocky' | 'towtruck-alert' | 'onetask-cli' | 'workout-journal' | 'password-manager';
+	slug:
+		| 'rocky'
+		| 'towtruck-alert'
+		| 'onetask-cli'
+		| 'workout-journal'
+		| 'password-manager'
+		| 'sidequest';
 	title: string;
 	status: ProjectStatus;
 	category: string;
@@ -18,6 +29,29 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+	{
+		slug: 'sidequest',
+		title: 'SideQuest',
+		status: 'Active / In Development',
+		category: 'Activity Discovery',
+		description:
+			'A cozy activity picker that helps you find something interesting to do right now.',
+		overview:
+			'A mobile-first discovery app that suggests context-aware activities or finds ideas based on the user’s mood and available time.',
+		motivation:
+			'I wanted to build around curiosity and real-world discovery rather than another general-purpose tracking application.',
+		contribution:
+			'An independent full-stack project covering product design, responsive React interfaces, server APIs, Supabase data, and PWA behavior.',
+		role: 'Designer and developer',
+		dateRange: 'Started 2026 · active development',
+		milestones: [
+			'Built context-aware random activity selection and multi-filter discovery.',
+			'Added favorites, completion history, guides, themes, and mobile navigation.',
+			'Protected the full Supabase catalog behind narrow server-side API routes.'
+		],
+		technologies: ['React', 'TypeScript', 'vinext', 'Vite', 'Nitro', 'Supabase', 'PostgreSQL'],
+		githubUrl: 'https://github.com/chrisvuletich/sidequest'
+	},
 	{
 		slug: 'password-manager',
 		title: 'Password Manager',
@@ -60,7 +94,8 @@ export const projects: Project[] = [
 			'Added cloud-synced history, custom exercises, templates, and progress tracking.',
 			'Continues to improve through real-world use during workouts.'
 		],
-		technologies: ['SvelteKit', 'TypeScript', 'Supabase', 'PostgreSQL', 'Supabase Auth', 'Vercel']
+		technologies: ['SvelteKit', 'TypeScript', 'Supabase', 'PostgreSQL', 'Supabase Auth', 'Vercel'],
+		githubUrl: 'https://github.com/chrisvuletich/workout-log'
 	},
 	{
 		slug: 'rocky',

@@ -4,6 +4,7 @@
 	import OneTaskCaseStudy from '$lib/components/OneTaskCaseStudy.svelte';
 	import PasswordManagerProject from '$lib/components/PasswordManagerProject.svelte';
 	import RockyProject from '$lib/components/RockyProject.svelte';
+	import SideQuestProject from '$lib/components/SideQuestProject.svelte';
 	import TowTruckCaseStudy from '$lib/components/TowTruckCaseStudy.svelte';
 	import WorkoutJournalProject from '$lib/components/WorkoutJournalProject.svelte';
 	import type { PageData } from './$types';
@@ -24,6 +25,8 @@
 
 {#if project.slug === 'rocky'}
 	<RockyProject />
+{:else if project.slug === 'sidequest'}
+	<SideQuestProject />
 {:else if project.slug === 'password-manager'}
 	<PasswordManagerProject />
 {:else if project.slug === 'onetask-cli'}

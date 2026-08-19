@@ -1,6 +1,7 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script lang="ts">
 	import { base, resolve } from '$app/paths';
+	const githubUrl = 'https://github.com/chrisvuletich/workout-log';
 
 	const features = [
 		'Secure Authentication',
@@ -38,6 +39,11 @@
 				to track my workouts. The goal was to create a system that exactly matched how I train while
 				making my workout history accessible from any device.
 			</p>
+			<div class="button-row">
+				<a class="button button--solid" href={githubUrl} target="_blank" rel="noreferrer"
+					>GitHub ↗</a
+				>
+			</div>
 		</div>
 		<dl class="workout-journal__facts">
 			<div>

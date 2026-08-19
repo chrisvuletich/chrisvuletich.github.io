@@ -85,6 +85,9 @@
 .status[data-status='In Progress'] {
 	color: var(--rust);
 }
+.status[data-status='Active / In Development'] {
+	color: var(--rust);
+}
 .status[data-status='V1 Complete'] {
 	color: var(--moss);
 }
