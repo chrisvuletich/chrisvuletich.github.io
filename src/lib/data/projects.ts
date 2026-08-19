@@ -2,7 +2,7 @@ export type ProjectStatus =
 	'In Progress' | 'V1 Complete' | 'Completed' | 'v0.2 In Progress' | 'Active Personal Project';
 
 export type Project = {
-	slug: 'rocky' | 'towtruck-alert' | 'onetask-cli' | 'workout-journal';
+	slug: 'rocky' | 'towtruck-alert' | 'onetask-cli' | 'workout-journal' | 'password-manager';
 	title: string;
 	status: ProjectStatus;
 	category: string;
@@ -18,6 +18,29 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+	{
+		slug: 'password-manager',
+		title: 'Password Manager',
+		status: 'Completed',
+		category: 'Python CLI',
+		description:
+			'A command-line password manager built in Python that securely stores account credentials in an encrypted local vault.',
+		overview:
+			'A terminal-based Python application for securely saving and managing login credentials locally.',
+		motivation:
+			'An older learning project I returned to so I could diagnose its storage and encryption problems and complete a safer V1 architecture.',
+		contribution:
+			'An independent security-focused learning project covering encrypted persistence, key derivation, CLI workflows, recovery, and automated testing.',
+		role: 'Python developer',
+		dateRange: 'V1 complete',
+		milestones: [
+			'Replaced delimiter-based records with independently encrypted JSON credentials.',
+			'Connected Scrypt-derived Fernet keys to the master-password flow.',
+			'Added transaction recovery and 10 automated tests around vault reliability.'
+		],
+		technologies: ['Python', 'Cryptography', 'Fernet', 'Scrypt', 'CLI', 'Unit Testing'],
+		githubUrl: 'https://github.com/chrisvuletich/password-manager'
+	},
 	{
 		slug: 'workout-journal',
 		title: 'Workout Journal',
