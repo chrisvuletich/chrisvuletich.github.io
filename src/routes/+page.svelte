@@ -1,9 +1,39 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import { base, resolve } from '$app/paths';
 	import { projects } from '$lib/data/projects';
-	const featured = projects;
+
+	const featuredProjectDetails = [
+		{
+			slug: 'rocky',
+			image: '/images/project/rocky/after/new-dash.webp',
+			alt: 'Rocky dashboard showing courses, account details, and AI tools',
+			fit: 'cover'
+		},
+		{
+			slug: 'sidequest',
+			image: '/images/project/sidequest/discover.png',
+			alt: 'SideQuest mobile discovery screen for choosing an activity',
+			fit: 'contain'
+		},
+		{
+			slug: 'workout-journal',
+			image: '/images/project/workout-log/history.webp',
+			alt: 'Workout Journal history screen showing previous training sessions',
+			fit: 'contain'
+		},
+		{
+			slug: 'password-manager',
+			image: '/images/project/password-manager/cli.png',
+			alt: 'Password Manager command-line interface showing available vault commands',
+			fit: 'contain'
+		}
+	] as const;
+
+	const featuredProjects = featuredProjectDetails.flatMap((details) => {
+		const project = projects.find((candidate) => candidate.slug === details.slug);
+		return project ? [{ ...project, ...details }] : [];
+	});
 	const url = 'https://vuletich.dev/';
 </script>
 
@@ -26,86 +56,121 @@
 <main class="home">
 	<section class="hero" aria-labelledby="hero-title">
 		<div class="hero__main">
-			<p class="eyebrow">Software engineer · Kent State University</p>
-			<h1 id="hero-title">Christopher<br />Vuletich</h1>
+			<p class="eyebrow">Computer Science Student &amp; Software Developer</p>
+			<h1 id="hero-title">Chris<br />Vuletich</h1>
 			<p class="hero__lede">
-				A collection of software, experiments, and things I’ve enjoyed creating.
+				I build useful software, web apps, and tools around problems I find interesting or run into
+				myself.
 			</p>
 			<div class="button-row">
-				<a class="button button--solid" href={resolve('/projects')}>View projects</a><a
-					class="button"
-					href={resolve('/about')}>About me</a
+				<a class="button button--solid" href={resolve('/projects')}>View Projects</a>
+				<a class="button" href={resolve('/about')}>About Me</a>
+			</div>
+			<div class="hero__links" aria-label="Elsewhere">
+				<a href="https://github.com/chrisvuletich" target="_blank" rel="noreferrer"
+					>GitHub <span aria-hidden="true">↗</span></a
 				>
 			</div>
 		</div>
 		<aside class="hero__notes" aria-label="Current direction">
-			<p class="eyebrow">In the workshop</p>
-			<ul>
-				<li>Building software and user interfaces</li>
-				<li>Exploring computer vision</li>
-				<li>Finishing meaningful projects</li>
-				<li>Studying computer science</li>
-			</ul>
+			<p class="eyebrow">Right now</p>
+			<p>
+				Finishing my computer science degree and building projects across full-stack development,
+				Python, and computer vision.
+			</p>
 		</aside>
 	</section>
 
-	<section class="sidequest-feature" aria-labelledby="sidequest-feature-title">
-		<div class="sidequest-feature__content">
-			<p class="sidequest-feature__label">SideQuest <span aria-hidden="true">✦</span></p>
-			<h2 id="sidequest-feature-title">Don’t know what to do? Find a SideQuest.</h2>
-			<p>
-				SideQuest gives you an activity when you want to get out, try something different, or just
-				make an ordinary day more interesting.
-			</p>
-			<div class="sidequest-feature__actions">
-				<a class="button sidequest-feature__primary" href={resolve('/sidequest')}
-					>Try SideQuest <span aria-hidden="true">→</span></a
-				>
-				<a class="button sidequest-feature__secondary" href={resolve('/projects/sidequest')}
-					>See how I built it</a
-				>
-			</div>
+	<section class="site-guide" aria-labelledby="site-guide-title">
+		<div class="site-guide__heading">
+			<p class="eyebrow">A quick index</p>
+			<h2 id="site-guide-title">Around here</h2>
 		</div>
-		<div class="sidequest-feature__trail-mark" aria-hidden="true">
-			<span>✦</span>
-			<i></i>
-		</div>
+		<nav class="site-guide__list" aria-label="Explore the site">
+			<a href={resolve('/projects')}>
+				<span>01</span>
+				<strong>Projects</strong>
+				<p>Technical write-ups about things I’ve designed and built.</p>
+			</a>
+			<a href={resolve('/apps')}>
+				<span>02</span>
+				<strong>Apps</strong>
+				<p>Things I’ve made that you can use, explore, or interact with.</p>
+			</a>
+			<a href={resolve('/about')}>
+				<span>03</span>
+				<strong>About</strong>
+				<p>A little more about me, my interests, and what I’m working toward.</p>
+			</a>
+		</nav>
 	</section>
 
-	<section class="section section--featured" aria-labelledby="featured-title">
+	<section class="featured-work" aria-labelledby="featured-title">
 		<div class="section-heading">
 			<div>
 				<p class="eyebrow">Selected work</p>
-				<h2 id="featured-title">Things in progress,<br />and things finished.</h2>
+				<h2 id="featured-title">Featured Projects</h2>
 			</div>
-			<a class="text-link" href={resolve('/projects')}
-				>All projects <span aria-hidden="true">→</span></a
-			>
+			<p>Four projects that show the range of software I like to build.</p>
 		</div>
-		<div class="projects-grid">
-			{#each featured as project (project.slug)}<ProjectCard {project} />{/each}
+
+		<div class="featured-projects">
+			{#each featuredProjects as project, index (project.slug)}
+				<a
+					class:featured-project--lead={index === 0}
+					class="featured-project"
+					href={resolve('/projects/[slug]', { slug: project.slug })}
+					aria-label={`View the ${project.title} project`}
+				>
+					<div
+						class:featured-project__image--contain={project.fit === 'contain'}
+						class="featured-project__image"
+					>
+						<img
+							src={`${base}${project.image}`}
+							alt={project.alt}
+							loading="lazy"
+							draggable="false"
+						/>
+					</div>
+					<div class="featured-project__content">
+						<p class="featured-project__meta">
+							<span>0{index + 1}</span>
+							<span>{project.category}</span>
+						</p>
+						<h3>{project.title}</h3>
+						<p>{project.description}</p>
+						<ul aria-label={`${project.title} technologies`}>
+							{#each project.technologies.slice(0, 4) as technology (technology)}
+								<li>{technology}</li>
+							{/each}
+						</ul>
+						<strong class="featured-project__action">View Project →</strong>
+					</div>
+				</a>
+			{/each}
 		</div>
+
+		<a class="featured-work__all text-link" href={resolve('/projects')}
+			>View All Projects <span aria-hidden="true">→</span></a
+		>
 	</section>
 
 	<section class="about-preview" aria-labelledby="about-preview-title">
 		<p class="eyebrow">A little context</p>
-		<h2 id="about-preview-title">I like projects you can point to.</h2>
+		<h2 id="about-preview-title">I like projects where I can see the result.</h2>
 		<p>
-			I’m a computer science student entering my senior year at Kent State, drawn to front-end work,
-			useful software, AI, and computer vision. I value the steady work of getting a project across
-			the finish line.
+			I’m a computer science student who enjoys building web apps, useful tools, and creative
+			technical projects—especially when the idea starts with a problem I’ve actually encountered.
 		</p>
-		<a class="text-link" href={resolve('/about')}
-			>More about my approach <span aria-hidden="true">→</span></a
+		<a class="text-link" href={resolve('/about')}>More About Me <span aria-hidden="true">→</span></a
 		>
 	</section>
+
 	<section class="contact-cta">
-		<p class="eyebrow">Open to conversation</p>
-		<h2>Building something useful?</h2>
-		<p>
-			I’m interested in software engineering opportunities, collaborative projects, and
-			conversations about making software better.
-		</p>
-		<a class="button button--solid" href={resolve('/contact')}>Get in touch</a>
+		<p class="eyebrow">Contact</p>
+		<h2>Let’s talk.</h2>
+		<p>I’m open to software engineering opportunities and conversations about useful software.</p>
+		<a class="button button--solid" href={resolve('/contact')}>Get in Touch</a>
 	</section>
 </main>

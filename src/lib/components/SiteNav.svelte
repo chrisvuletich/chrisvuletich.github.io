@@ -5,15 +5,21 @@
 
 	let menuOpen = $state(false);
 	const links = [
-		{ href: resolve('/'), label: 'Home' },
-		{ href: resolve('/projects'), label: 'Projects' },
-		{ href: resolve('/about'), label: 'About' },
-		{ href: resolve('/contact'), label: 'Contact' },
-		{ href: resolve('/books'), label: 'Books' }
+		{ href: resolve('/'), path: `${base}/`, label: 'Home' },
+		{ href: resolve('/projects'), path: `${base}/projects`, label: 'Projects' },
+		{ href: resolve('/apps'), path: `${base}/apps`, label: 'Apps' },
+		{ href: resolve('/about'), path: `${base}/about`, label: 'About' },
+		{ href: resolve('/contact'), path: `${base}/contact`, label: 'Contact' }
 	];
 
-	function isCurrent(href: string) {
-		return href === `${base}/` ? page.url.pathname === href : page.url.pathname.startsWith(href);
+	function isCurrent(link: (typeof links)[number]) {
+		if (link.path === `${base}/`) return page.url.pathname === link.path;
+		if (link.label === 'Apps') {
+			return [link.path, `${base}/bookshelf`, `${base}/books`].some(
+				(path) => page.url.pathname === path || page.url.pathname.startsWith(`${path}/`)
+			);
+		}
+		return page.url.pathname === link.path || page.url.pathname.startsWith(`${link.path}/`);
 	}
 </script>
 
@@ -40,7 +46,7 @@
 			{#each links as link (link.href)}
 				<a
 					href={link.href}
-					aria-current={isCurrent(link.href) ? 'page' : undefined}
+					aria-current={isCurrent(link) ? 'page' : undefined}
 					onclick={() => (menuOpen = false)}>{link.label}</a
 				>
 			{/each}
