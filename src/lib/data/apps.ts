@@ -1,7 +1,8 @@
 import type { Project } from './projects';
 
 export type AppEntry = {
-	slug: 'workout-journal' | 'sidequest' | 'bookshelf' | 'cozy-commands' | 'bar-fishing';
+	slug:
+		'workout-journal' | 'notes-app' | 'sidequest' | 'bookshelf' | 'cozy-commands' | 'bar-fishing';
 	name: string;
 	type: 'Web App' | 'Personal Tool' | 'Reading App' | 'Game Mod';
 	description: string;
@@ -12,6 +13,7 @@ export type AppEntry = {
 	actionLabel?: string;
 	external?: boolean;
 	projectSlug?: Project['slug'];
+	projectActionLabel?: string;
 };
 
 export const apps: AppEntry[] = [
@@ -42,6 +44,18 @@ export const apps: AppEntry[] = [
 		actionLabel: 'Try SideQuest',
 		external: true,
 		projectSlug: 'sidequest'
+	},
+	{
+		slug: 'notes-app',
+		name: 'Notes App',
+		type: 'Personal Tool',
+		description:
+			'A private workspace I built for my notes, courses, assignments, and other schoolwork.',
+		status: 'Private · Sign-in required',
+		visual: 'N',
+		tone: 'ink',
+		projectSlug: 'notes-app',
+		projectActionLabel: 'View Project'
 	},
 	{
 		slug: 'bookshelf',

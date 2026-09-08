@@ -4,6 +4,7 @@ export type ProjectStatus =
 	| 'Completed'
 	| 'v0.2 In Progress'
 	| 'Active Personal Project'
+	| 'Active Development'
 	| 'Active / In Development';
 
 export type Project = {
@@ -12,6 +13,7 @@ export type Project = {
 		| 'towtruck-alert'
 		| 'onetask-cli'
 		| 'workout-journal'
+		| 'notes-app'
 		| 'password-manager'
 		| 'sidequest';
 	title: string;
@@ -96,6 +98,38 @@ export const projects: Project[] = [
 		],
 		technologies: ['SvelteKit', 'TypeScript', 'Supabase', 'PostgreSQL', 'Supabase Auth', 'Vercel'],
 		githubUrl: 'https://github.com/chrisvuletich/workout-log'
+	},
+	{
+		slug: 'notes-app',
+		title: 'Notes App',
+		status: 'Active Development',
+		category: 'Private Academic Workspace',
+		description:
+			'A private note-taking and academic workspace I built to organize courses, assignments, notes, and notebooks in one place.',
+		overview:
+			'Notes App brings my academic schedule, course work, personal tasks, Stickies, continuous rich-text notes, and page-based notebooks into one private workspace.',
+		motivation:
+			'I wanted a note-taking system shaped around how I actually organize school instead of spreading course information, assignments, and notes across disconnected tools.',
+		contribution:
+			'An independent full-stack project covering product design, relational data, continuous rich-text editing, private file storage, authentication, access control, and end-to-end testing.',
+		role: 'Designer and developer',
+		dateRange: 'Started 2026 · active development',
+		milestones: [
+			'Built separate academic and personal workspaces around courses, schedules, tasks, notes, and Stickies.',
+			'Created a continuous JSONB rich-text editor with slash commands, editable tables, autosave, and Markdown import and export.',
+			'Added page-based notebooks with typed, image, and PDF pages backed by owner-scoped private storage.'
+		],
+		technologies: [
+			'SvelteKit',
+			'Svelte 5',
+			'TypeScript',
+			'Supabase Auth',
+			'PostgreSQL',
+			'Row Level Security',
+			'Supabase Storage',
+			'PDF.js',
+			'Playwright'
+		]
 	},
 	{
 		slug: 'rocky',

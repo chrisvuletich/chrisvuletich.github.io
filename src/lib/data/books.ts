@@ -138,28 +138,19 @@ export const books: Book[] = [
 		ownership: 'own'
 	},
 	{
-		id: 'red-rising',
-		title: 'Red Rising',
-		author: 'Pierce Brown',
+		id: 'piranesi',
+		title: 'Piranesi',
+		author: 'Susanna Clarke',
 		yearRead: 2026,
-		pageCount: 401,
-		rating: null,
-		status: 'currently-reading',
-		genre: 'Dystopian Science Fiction',
-		tags: [
-			'science-fiction',
-			'dystopian',
-			'space-opera',
-			'rebellion',
-			'adventure',
-			'red-rising-saga'
-		],
+		pageCount: 275,
+		rating: 4,
+		status: 'read',
 		format: 'kindle',
-		cover: '/images/books/red-rising.webp',
-		coverAlt: 'Cover of Red Rising by Pierce Brown',
+		cover: '/images/books/piranesi-book.jpg',
+		coverAlt: 'Cover of Piranesi by Susanna Clarke',
 		favorite: false,
 		reread: false,
-		ownership: 'digital'
+		ownership: 'own'
 	},
 	{
 		id: 'ghost-in-the-wires',

@@ -2,6 +2,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import OneTaskCaseStudy from '$lib/components/OneTaskCaseStudy.svelte';
+	import NotesAppProject from '$lib/components/NotesAppProject.svelte';
 	import PasswordManagerProject from '$lib/components/PasswordManagerProject.svelte';
 	import RockyProject from '$lib/components/RockyProject.svelte';
 	import SideQuestProject from '$lib/components/SideQuestProject.svelte';
@@ -35,6 +36,8 @@
 	<TowTruckCaseStudy />
 {:else if project.slug === 'workout-journal'}
 	<WorkoutJournalProject />
+{:else if project.slug === 'notes-app'}
+	<NotesAppProject />
 {:else}
 	<main class="page">
 		<a class="back-link" href={resolve('/projects')}>← Back to projects</a>

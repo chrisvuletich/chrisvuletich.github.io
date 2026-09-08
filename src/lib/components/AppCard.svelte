@@ -37,7 +37,9 @@
 			</a>
 		{/if}
 		{#if projectHref}
-			<a class="text-link" href={projectHref}>Project Write-up <span aria-hidden="true">→</span></a>
+			<a class="text-link" href={projectHref}
+				>{app.projectActionLabel ?? 'Project Write-up'} <span aria-hidden="true">→</span></a
+			>
 		{/if}
 		{#if !primaryHref && !projectHref}
 			<p class="app-card__availability">Not publicly available yet</p>
