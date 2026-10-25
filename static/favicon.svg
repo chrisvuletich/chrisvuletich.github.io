@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
   <title>Christopher Vuletich</title>
-  <rect width="88" height="88" rx="44" fill="#30332b"/>
-  <circle cx="44" cy="33" r="12" stroke="#b4b3a9" stroke-width="2"/>
-  <path d="M21 72c1-13 9-20 23-20s22 7 23 20" stroke="#b4b3a9" stroke-width="2" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="14" fill="#20211e"/>
+  <path d="M11 44L26 21L38 38L45 28L54 44" stroke="#eee9df" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

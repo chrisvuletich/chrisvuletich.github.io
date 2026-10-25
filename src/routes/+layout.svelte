@@ -8,7 +8,8 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+	<link rel="icon" href={`${base}/favicon.png`} type="image/png" sizes="32x32" />
+	<link rel="icon" href={`${base}/favicon.svg?v=mountain`} type="image/svg+xml" sizes="any" />
 	<meta name="theme-color" content="#181917" />
 </svelte:head>
 
