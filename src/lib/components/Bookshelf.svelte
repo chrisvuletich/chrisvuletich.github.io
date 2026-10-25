@@ -1,11 +1,13 @@
 <script lang="ts">
 	import BookCard from '$lib/components/BookCard.svelte';
+	import LibraryLight from '$lib/components/LibraryLight.svelte';
 	import { books } from '$lib/data/books';
 	import { readingGoals } from '$lib/data/readingGoals';
 	import { filterBooks, genres, sortBooks, years } from '$lib/utils/bookFilters';
 	import { stats } from '$lib/utils/bookStats';
 	import type { BookStatus, SortOption } from '$lib/types/book';
 
+	let lightsOn = $state(true);
 	const availableYears = years(books);
 	let selectedStatsYear = $state<number | 'all'>(availableYears[0] ?? 'all');
 	let selectedLibraryYear = $state<number | 'all'>(availableYears[0] ?? 'all');
@@ -65,133 +67,156 @@
 		content="My personal reading library, with books, ratings, reviews, and yearly statistics."
 	/><meta property="og:url" content="https://vuletich.dev/bookshelf" /></svelte:head
 >
-<main class="books-page page">
-	<header class="books-intro">
-		<h1>Bookshelf</h1>
-		<p>What I’m reading and what I thought of the books I’ve finished.</p>
-	</header>
-	<section class="books-range" aria-label="Statistics period">
-		<div class="year-picker">
-			<label for="stats-year">Statistics Period</label><select
-				id="stats-year"
-				bind:value={selectedStatsYear}
-				>{#each availableYears as option (option)}<option value={option}>{option}</option
-					>{/each}<option value="all">All Time</option></select
-			>
-		</div>
-		<p>{selectedStatsYear === 'all' ? 'All-time reading' : `${selectedStatsYear} reading`}</p>
-	</section>
-	<section class="book-stats" aria-label="Reading statistics">
-		<div><span>Books finished</span><strong>{summary.finished}</strong></div>
-		<div>
-			<span>Pages read</span><strong>{summary.pages || '—'}</strong>{#if summary.unknownPages}<small
-					>Known page total</small
-				>{/if}
-		</div>
-		<div>
-			<span>Average rating</span><strong
-				>{summary.average === null ? '—' : summary.average.toFixed(1)}</strong
-			>
-		</div>
-		<div><span>Favorites</span><strong>{summary.favorites}</strong></div>
-		<div><span>Currently reading</span><strong>{summary.current}</strong></div>
-	</section>
-	{#if selectedStatsYear !== 'all' && readingGoals[selectedStatsYear]}<section class="reading-goal">
-			<span>{summary.finished} of {readingGoals[selectedStatsYear]} books</span><progress
-				value={summary.finished}
-				max={readingGoals[selectedStatsYear]}
-				>{summary.finished} of {readingGoals[selectedStatsYear]}</progress
-			>
-		</section>{/if}
-	{#if nightstandBooks.length}<section class="nightstand" aria-labelledby="nightstand-title">
-			<div>
-				<h2 id="nightstand-title">Currently reading</h2>
+<div class="private-library" data-lights={lightsOn ? 'on' : 'off'}>
+	<main class="books-page page">
+		<LibraryLight
+			on={lightsOn}
+			ontoggle={() => {
+				lightsOn = !lightsOn;
+			}}
+		/>
+		<header class="books-intro">
+			<h1>Bookshelf</h1>
+			<p>What I’m reading and what I thought of the books I’ve finished.</p>
+		</header>
+		<section class="books-range" aria-label="Statistics period">
+			<div class="reading-journal">
+				<h2>Reading journal</h2>
+				<p>{selectedStatsYear === 'all' ? 'All-time reading' : `${selectedStatsYear} reading`}</p>
 			</div>
-			<ul>
-				{#each nightstandBooks as book (book.id)}<li
-						style={`--book-accent:${book.accent ?? '#8c684b'}`}
-					>
-						<div class="nightstand__spine">
-							{#if book.cover}<img src={book.cover} alt="" />{:else}<span>{book.title}</span>{/if}
-						</div>
-						<p><strong>{book.title}</strong><span>{book.author}</span></p>
-					</li>{/each}
-			</ul>
-		</section>{/if}
-	<section class="library" aria-labelledby="library-title">
-		<div class="library__heading">
-			<div>
-				<h2 id="library-title">
-					{filteredLibraryBooks.length}
-					{filteredLibraryBooks.length === 1 ? 'book' : 'books'}
-				</h2>
-			</div>
-		</div>
-		<details class="library-filters">
-			<summary>Filters</summary>
-			<div class="book-controls">
-				<label
-					>Search <input
-						bind:value={librarySearch}
-						placeholder="Title, author, genre, or tag"
-					/></label
-				>{#if librarySearch}<button type="button" onclick={() => (librarySearch = '')}
-						>Clear search</button
-					>{/if}<label
-					>Year Read <select bind:value={selectedLibraryYear}
-						><option value="all">All Years</option>{#each availableYears as option (option)}<option
-								value={option}>{option}</option
-							>{/each}</select
-					></label
-				><label
-					>Status <select bind:value={libraryStatus}
-						><option value="all">All</option><option value="read">Read</option><option
-							value="currently-reading">Currently Reading</option
-						><option value="next-up">Next Up</option><option value="paused">Paused</option><option
-							value="did-not-finish">Did Not Finish</option
-						></select
-					></label
+			<div class="year-picker">
+				<label for="stats-year">Statistics Period</label><select
+					id="stats-year"
+					bind:value={selectedStatsYear}
+					>{#each availableYears as option (option)}<option value={option}>{option}</option
+						>{/each}<option value="all">All Time</option></select
 				>
-				<details class="more-filters">
-					<summary>More Filters</summary><label
-						>Rating <select bind:value={libraryRating}
-							><option value="all">All ratings</option><option value="5">5 stars</option><option
-								value="4">4 stars and up</option
-							><option value="3">3 stars and up</option><option value="unrated">Unrated</option
-							></select
-						></label
-					><label
-						>Genre <select bind:value={libraryGenre}
-							><option value="">All genres</option
-							>{#each genres(booksForLibraryYear) as item (item)}<option value={item}>{item}</option
+			</div>
+		</section>
+		<section class="book-stats" aria-label="Reading statistics">
+			<div><span>Books finished</span><strong>{summary.finished}</strong></div>
+			<div>
+				<span>Pages read</span><strong>{summary.pages || '—'}</strong
+				>{#if summary.unknownPages}<small>Known page total</small>{/if}
+			</div>
+			<div>
+				<span>Average rating</span><strong
+					>{summary.average === null ? '—' : summary.average.toFixed(1)}</strong
+				>
+			</div>
+			<div><span>Favorites</span><strong>{summary.favorites}</strong></div>
+			<div><span>Currently reading</span><strong>{summary.current}</strong></div>
+		</section>
+		{#if selectedStatsYear !== 'all' && readingGoals[selectedStatsYear]}<section
+				class="reading-goal"
+			>
+				<div>
+					<span class="reading-goal__label">{selectedStatsYear} reading goal</span><span
+						>{summary.finished} of {readingGoals[selectedStatsYear]} books</span
+					>
+				</div>
+				<progress
+					aria-label={`Reading goal for ${selectedStatsYear}`}
+					value={summary.finished}
+					max={readingGoals[selectedStatsYear]}
+					>{summary.finished} of {readingGoals[selectedStatsYear]}</progress
+				>
+			</section>{/if}
+		{#if nightstandBooks.length}<section class="nightstand" aria-labelledby="nightstand-title">
+				<div>
+					<h2 id="nightstand-title">Currently reading</h2>
+				</div>
+				<ul>
+					{#each nightstandBooks as book (book.id)}<li
+							style={`--book-accent:${book.accent ?? '#8c684b'}`}
+						>
+							<div class="nightstand__spine">
+								{#if book.cover}<img
+										src={book.cover}
+										alt=""
+										loading="lazy"
+										decoding="async"
+									/>{:else}<span>{book.title}</span>{/if}
+							</div>
+							<p><strong>{book.title}</strong><span>{book.author}</span></p>
+						</li>{/each}
+				</ul>
+			</section>{/if}
+		<section class="library" aria-labelledby="library-title">
+			<div class="library__heading">
+				<h2 id="library-title">The collection</h2>
+				<p class="library-count" role="status" aria-live="polite" aria-atomic="true">
+					{filteredLibraryBooks.length} of {books.length}
+					{books.length === 1 ? 'book' : 'books'}
+				</p>
+			</div>
+			<details class="library-filters">
+				<summary>Search &amp; filters</summary>
+				<div class="book-controls">
+					<label
+						>Search <input
+							bind:value={librarySearch}
+							placeholder="Title, author, genre, or tag"
+						/></label
+					>{#if librarySearch}<button type="button" onclick={() => (librarySearch = '')}
+							>Clear search</button
+						>{/if}<label
+						>Year Read <select bind:value={selectedLibraryYear}
+							><option value="all">All Years</option
+							>{#each availableYears as option (option)}<option value={option}>{option}</option
 								>{/each}</select
 						></label
+					><label
+						>Status <select bind:value={libraryStatus}
+							><option value="all">All</option><option value="read">Read</option><option
+								value="currently-reading">Currently Reading</option
+							><option value="next-up">Next Up</option><option value="paused">Paused</option><option
+								value="did-not-finish">Did Not Finish</option
+							></select
+						></label
 					>
-				</details>
-				<label
-					>Sort <select bind:value={librarySort}
-						><option value="date-desc">Date finished: newest</option><option value="date-asc"
-							>Date finished: oldest</option
-						><option value="rating-desc">Rating: highest</option><option value="title"
-							>Title: A–Z</option
-						><option value="author">Author: A–Z</option><option value="pages-desc"
-							>Pages: highest</option
-						></select
-					></label
-				><label class="favorite-filter"
-					><input type="checkbox" bind:checked={libraryFavorites} /> Favorites only</label
-				><button type="button" onclick={clearLibraryFilters}>Clear filters</button>
+					<label
+						>Sort <select bind:value={librarySort}
+							><option value="date-desc">Date finished: newest</option><option value="date-asc"
+								>Date finished: oldest</option
+							><option value="rating-desc">Rating: highest</option><option value="title"
+								>Title: A–Z</option
+							><option value="author">Author: A–Z</option><option value="pages-desc"
+								>Pages: highest</option
+							></select
+						></label
+					><label class="favorite-filter"
+						><input type="checkbox" bind:checked={libraryFavorites} /> Favorites only</label
+					><button type="button" onclick={clearLibraryFilters}>Clear filters</button>
+					<details class="more-filters">
+						<summary>More Filters</summary><label
+							>Rating <select bind:value={libraryRating}
+								><option value="all">All ratings</option><option value="5">5 stars</option><option
+									value="4">4 stars and up</option
+								><option value="3">3 stars and up</option><option value="unrated">Unrated</option
+								></select
+							></label
+						><label
+							>Genre <select bind:value={libraryGenre}
+								><option value="">All genres</option
+								>{#each genres(booksForLibraryYear) as item (item)}<option value={item}
+										>{item}</option
+									>{/each}</select
+							></label
+						>
+					</details>
+				</div>
+			</details>
+			<div class="book-grid">
+				{#each filteredLibraryBooks as book (book.id)}<BookCard
+						{book}
+						expanded={expanded === book.id}
+						onToggle={() => (expanded = expanded === book.id ? null : book.id)}
+					/>{:else}<p class="books-empty">
+						No books match this view{librarySearch ? ` for “${librarySearch}”` : ''}. Try another
+						filter.
+					</p>{/each}
 			</div>
-		</details>
-		<div class="book-grid">
-			{#each filteredLibraryBooks as book (book.id)}<BookCard
-					{book}
-					expanded={expanded === book.id}
-					onToggle={() => (expanded = expanded === book.id ? null : book.id)}
-				/>{:else}<p class="books-empty">
-					No books match this view{librarySearch ? ` for “${librarySearch}”` : ''}. Try another
-					filter.
-				</p>{/each}
-		</div>
-	</section>
-</main>
+		</section>
+	</main>
+</div>

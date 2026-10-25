@@ -9,11 +9,16 @@
 	const detailId = $derived(`book-details-${book.id}`);
 </script>
 
-<article class="book-card" style={`--book-accent:${book.accent ?? '#7b6351'}`}>
+<article
+	class:book-card--expanded={expanded}
+	class="book-card"
+	style={`--book-accent:${book.accent ?? '#7b6351'}`}
+>
 	<button
 		class="book-card__trigger"
 		type="button"
 		aria-expanded={expanded}
+		aria-label={`${expanded ? 'Close' : 'View'} details for ${book.title} by ${book.author}`}
 		aria-controls={detailId}
 		onclick={onToggle}
 	>
@@ -21,6 +26,8 @@
 			{#if book.cover}<img
 					src={book.cover}
 					alt={book.coverAlt ?? `Cover of ${book.title} by ${book.author}`}
+					loading="lazy"
+					decoding="async"
 				/>{:else}<span>{book.title}</span><small>{book.author}</small>{/if}
 		</div>
 		<div class="book-card__copy">
@@ -36,21 +43,21 @@
 								: 'Did not finish'}{#if book.favorite}<span aria-label="Favorite">★ Favorite</span
 					>{/if}
 			</p>
-			<h2>{book.title}</h2>
+			<h3 class="book-card__title">{book.title}</h3>
 			<p class="book-card__author">{book.author}</p>
 			<p class="book-card__rating">
 				{rating}{#if book.yearRead}
 					<span>· {book.yearRead}</span>{/if}
 			</p>
-			<span class="book-card__cue">View book →</span>
+			<span class="book-card__cue">{expanded ? 'Close book −' : 'View book +'}</span>
 		</div>
 	</button>
 	{#if expanded}<section class="book-details" id={detailId}>
 			<div class="book-details__cover">
-				{#if book.cover}<img src={book.cover} alt="" />{/if}
+				{#if book.cover}<img src={book.cover} alt="" loading="lazy" decoding="async" />{/if}
 			</div>
 			<div>
-				<h3>{book.title}</h3>
+				<h4>{book.title}</h4>
 				<p class="book-card__author">{book.author}</p>
 				{#if book.review}<p class="book-details__review">{book.review}</p>{/if}
 				<dl>
