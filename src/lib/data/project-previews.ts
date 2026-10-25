@@ -6,6 +6,8 @@ export const projectPreviews: Partial<
 		{
 			image: string;
 			alt: string;
+			poster?: string;
+			animatedWebp?: string;
 			secondary?: string;
 			secondaryAlt?: string;
 		}
@@ -32,6 +34,12 @@ export const projectPreviews: Partial<
 		alt: 'Notes App academic workspace',
 		secondary: 'notes/Notes.png',
 		secondaryAlt: 'Notes App rich-text editor'
+	},
+	'towtruck-alert': {
+		image: 'towtruck-alert/demo.gif',
+		animatedWebp: 'towtruck-alert/demo.webp',
+		poster: 'towtruck-alert/demo-poster.jpg',
+		alt: 'TowTruck Alert tracking cars on a road with bounding boxes, confidence scores, and tracking IDs'
 	},
 	rocky: {
 		image: 'rocky/after/new-dash.webp',

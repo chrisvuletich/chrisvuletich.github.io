@@ -27,13 +27,14 @@
 	<div class="content-grid content-grid--prose">
 		<div>
 			<div class="contact-links">
+				<a class="contact-link--email" href="mailto:chris@vuletich.dev"
+					><span>chris@vuletich.dev</span><span aria-hidden="true">↗</span></a
+				>
 				<a href="https://github.com/chrisvuletich" target="_blank" rel="noreferrer"
 					><span>GitHub</span><span aria-hidden="true">↗</span></a
 				>
 			</div>
-			<p class="contact-note">
-				I haven’t added my email here yet. For now, you can find me on GitHub.
-			</p>
+			<p class="contact-note">Email is the best way to reach me.</p>
 		</div>
 	</div>
 </main>

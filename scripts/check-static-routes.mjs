@@ -29,7 +29,8 @@ const mime = {
 	'.svg': 'image/svg+xml',
 	'.webp': 'image/webp',
 	'.png': 'image/png',
-	'.jpg': 'image/jpeg'
+	'.jpg': 'image/jpeg',
+	'.gif': 'image/gif'
 };
 async function filesUnder(directory) {
 	const entries = await readdir(directory, { withFileTypes: true });

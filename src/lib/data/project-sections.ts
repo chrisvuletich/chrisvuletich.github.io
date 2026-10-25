@@ -203,6 +203,10 @@ export const projectSections = {
 			title: 'Learning progression'
 		},
 		{
+			id: 'screenshots-title',
+			title: 'Screenshots'
+		},
+		{
 			id: 'challenges-title',
 			title: 'Challenges'
 		},
