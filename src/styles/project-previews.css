@@ -12,6 +12,9 @@
 	background: #383e32;
 	transition: border-color var(--transition);
 }
+.project-preview__picture {
+	display: contents;
+}
 .project-preview__primary {
 	display: block;
 	width: 100%;
@@ -229,4 +232,32 @@
 	.case-index {
 		gap: 0.1rem 1rem;
 	}
+}
+
+.project-preview[data-project='towtruck-alert'],
+.case-opening .project-preview[data-project='towtruck-alert'] {
+	aspect-ratio: 294 / 161;
+	min-height: 0;
+	padding: clamp(0.6rem, 1.5vw, 1.2rem);
+}
+.project-preview__playback {
+	position: absolute;
+	z-index: 3;
+	right: 1.25rem;
+	bottom: 1.25rem;
+	min-height: 44px;
+	padding: 0.55rem 0.85rem;
+	border: 1px solid #b6b6a4;
+	border-radius: 4px;
+	background: #1b211c;
+	color: #f3eee3;
+	font: 0.75rem var(--sans);
+	cursor: pointer;
+}
+.project-preview__playback:hover {
+	background: #303933;
+}
+.project-preview__playback:focus-visible {
+	outline: 2px solid #f3eee3;
+	outline-offset: 3px;
 }

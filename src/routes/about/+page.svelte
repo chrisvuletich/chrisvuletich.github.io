@@ -29,10 +29,12 @@
 		</div>
 		<figure class="about-page__photo">
 			<img
-				src={`${base}/images/landscape/mountains-960.webp`}
-				alt="Autumn woodland and snow-covered mountains in the Swiss Alps"
+				src={`${base}/images/about/chris-overlook-960.jpg`}
+				srcset={`${base}/images/about/chris-overlook-480.jpg 480w, ${base}/images/about/chris-overlook-960.jpg 960w`}
+				sizes="(max-width: 700px) 90vw, 38vw"
+				alt="Christopher sitting on a rocky overlook above a wooded valley"
 				width="960"
-				height="720"
+				height="1440"
 				decoding="async"
 			/>
 		</figure>

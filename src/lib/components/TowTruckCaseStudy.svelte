@@ -3,9 +3,29 @@
 	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
 	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
 	import { projectSections } from '$lib/data/project-sections';
-	import { resolve } from '$app/paths';
+	import { base, resolve } from '$app/paths';
 	import { towtruckCaseStudy as study } from '$lib/data/towtruck-case-study';
 	const githubUrl = 'https://github.com/chrisvuletich/towtruck-alert';
+	const screenshots = [
+		{
+			file: 'face-detection.jpg',
+			height: 809,
+			alt: 'An early webcam test with a green rectangle around a detected face',
+			caption: 'The first face detection test with OpenCV.'
+		},
+		{
+			file: 'object-detection.jpg',
+			height: 808,
+			alt: 'YOLO detecting a person, a bottle, and a potted plant in a webcam feed',
+			caption: 'Trying YOLO with several objects in the same frame.'
+		},
+		{
+			file: 'confidence-center.jpg',
+			height: 809,
+			alt: 'A detected person with a confidence score, bounding box, and marked center point',
+			caption: 'Adding confidence scores and center points to detections.'
+		}
+	];
 </script>
 
 <main class="towtruck-case-study page">
@@ -107,6 +127,25 @@
 					</div>
 				</li>{/each}
 		</ol>
+	</section>
+
+	<section class="case-section" aria-labelledby="screenshots-title">
+		<h2 id="screenshots-title">Screenshots</h2>
+		<div class="towtruck-screenshots">
+			{#each screenshots as screenshot (screenshot.file)}
+				<figure>
+					<img
+						src={`${base}/images/project/towtruck-alert/${screenshot.file}`}
+						alt={screenshot.alt}
+						width="1440"
+						height={screenshot.height}
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption>{screenshot.caption}</figcaption>
+				</figure>
+			{/each}
+		</div>
 	</section>
 
 	<section class="case-section" aria-labelledby="challenges-title">

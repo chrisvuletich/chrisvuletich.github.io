@@ -192,7 +192,11 @@
 
 	<section class="contact-cta">
 		<h2>Get in touch</h2>
-		<p>I’m looking for software engineering opportunities. You can reach me through GitHub.</p>
+		<p>
+			I’m looking for software engineering opportunities. Email me at <a
+				href="mailto:chris@vuletich.dev">chris@vuletich.dev</a
+			>.
+		</p>
 		<a class="button button--solid" href={resolve('/contact')}>Get in Touch</a>
 	</section>
 </main>
