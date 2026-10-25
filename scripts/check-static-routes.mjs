@@ -47,17 +47,26 @@ const server = createServer(async (req, res) => {
 	try {
 		const url = new URL(req.url, 'http://localhost');
 		const pathname = decodeURIComponent(url.pathname);
-		if (pathname !== '/' && pathname.endsWith('/')) {
-			res.writeHead(308, { location: pathname.slice(0, -1) + url.search }).end();
-			return;
-		}
 		let file = resolve(root, '.' + pathname);
 		if (file !== root && !file.startsWith(root + sep)) {
 			res.writeHead(403).end();
 			return;
 		}
+		// Mirror directory-index hosting without inventing redirects for missing pages.
 		if (pathname === '/') file = resolve(root, 'index.html');
-		else if (!extname(file)) file += '.html';
+		else if (!extname(file)) {
+			try {
+				const index = resolve(file, 'index.html');
+				if (!(await stat(index)).isFile()) throw new Error('Missing directory index');
+				if (!pathname.endsWith('/')) {
+					res.writeHead(308, { location: pathname + '/' + url.search }).end();
+					return;
+				}
+				file = index;
+			} catch {
+				if (!pathname.endsWith('/')) file += '.html';
+			}
+		}
 		let status = 200;
 		try {
 			if (!(await stat(file)).isFile()) throw new Error('Not a file');
@@ -88,6 +97,7 @@ const origin = originArgument
 	: `http://127.0.0.1:${server.address().port}`;
 try {
 	const pages = new Map();
+	const pageUrls = new Map();
 	for (const [route, heading] of routes) {
 		const response = await fetch(origin + route);
 		const html = await response.text();
@@ -105,6 +115,7 @@ try {
 			);
 		}
 		pages.set(route, html);
+		pageUrls.set(route, response.url);
 		if (route !== '/') {
 			const trailingSlash = await fetch(origin + route + '/');
 			if (trailingSlash.status !== 200 || !(await trailingSlash.text()).includes(h1)) {
@@ -123,11 +134,12 @@ try {
 						? attribute[2].split(',').map((candidate) => candidate.trim().split(/\s+/)[0])
 						: [attribute[2]];
 				for (const value of values) {
-					const url = new URL(value.replaceAll('&amp;', '&'), origin + route);
+					const url = new URL(value.replaceAll('&amp;', '&'), pageUrls.get(route));
 					if (url.origin !== origin) continue;
-					if (url.hash && routes.has(url.pathname)) {
+					const pagePath = url.pathname.replace(/\/$/, '') || '/';
+					if (url.hash && routes.has(pagePath)) {
 						const id = decodeURIComponent(url.hash.slice(1));
-						if (!pages.get(url.pathname).includes(`id="${id}"`)) {
+						if (!pages.get(pagePath).includes(`id="${id}"`)) {
 							throw new Error(`${route}: missing anchor target ${url.pathname}${url.hash}`);
 						}
 					}
