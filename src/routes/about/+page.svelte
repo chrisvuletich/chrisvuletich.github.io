@@ -44,27 +44,31 @@
 			<section class="content-section">
 				<h2>Introduction</h2>
 				<p>
-					I’m especially interested in front-end development, AI, and computer vision. I like taking
-					an idea and turning it into something I can actually use.
+					I’m a computer science student at Kent State University with an interest in software
+					engineering, artificial intelligence, and computer vision. I enjoy taking ideas and
+					turning them into software I can actually use.
 				</p>
 				<p>
-					I got interested in computer science through games, Scratch projects, and a website I
-					built when I was younger. Since then, I’ve become more interested in building software
-					that helps with everyday problems.
+					I first got interested in programming through games, Scratch projects, and a website I
+					built when I was younger. Since then, I’ve enjoyed exploring different areas of computer
+					science and finding ways to build things that solve real problems.
 				</p>
 			</section>
 			<section class="content-section">
 				<h2>How I work</h2>
 				<p>
-					I try to keep projects small enough to finish. I’d rather get something working, use it,
-					and improve it than keep adding features before the basics are done.
+					I like learning by building things. Most of my projects start with something I’m curious
+					about or a problem I want to solve. I enjoy experimenting, figuring out how things work,
+					and improving what I’ve built as I learn more.
 				</p>
 			</section>
 			<section class="content-section">
 				<h2>What I’m exploring</h2>
 				<p>
-					I’m working on my front-end and full-stack skills, and learning more about AI and computer
-					vision through personal projects. Outside of coding, I enjoy art and photography.
+					Recently, I’ve been spending more time with Python, OpenCV, and computer vision. I’m
+					especially interested in how software can understand and interact with the physical world.
+					I also enjoy full-stack development, building personal tools, and experimenting with new
+					technologies.
 				</p>
 			</section>
 			<section class="content-section">
@@ -93,6 +97,14 @@
 						</ul>
 					</div>
 				</div>
+			</section>
+			<section class="content-section">
+				<h2>Outside of programming</h2>
+				<p>
+					Outside of computer science, I enjoy hiking, photography, drawing, reading, and spending
+					time outdoors. I like having hobbies that get me away from a screen and give me something
+					different to explore.
+				</p>
 			</section>
 		</div>
 	</div>
