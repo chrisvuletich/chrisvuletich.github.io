@@ -24,70 +24,75 @@
 	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
-{#if project.slug === 'rocky'}
-	<RockyProject />
-{:else if project.slug === 'sidequest'}
-	<SideQuestProject />
-{:else if project.slug === 'password-manager'}
-	<PasswordManagerProject />
-{:else if project.slug === 'onetask-cli'}
-	<OneTaskCaseStudy />
-{:else if project.slug === 'towtruck-alert'}
-	<TowTruckCaseStudy />
-{:else if project.slug === 'workout-journal'}
-	<WorkoutJournalProject />
-{:else if project.slug === 'notes-app'}
-	<NotesAppProject />
-{:else}
-	<main class="page">
-		<a class="back-link" href={resolve('/projects')}>← Back to projects</a>
-		<header class="detail-header">
-			<div>
-				<p class="eyebrow">Project file</p>
-				<h1>{project.title}</h1>
-			</div>
-			<div class="detail-header__summary">
-				<p>{project.overview}</p>
-				<dl class="detail-meta">
-					<div>
-						<dt>Status</dt>
-						<dd>{project.status}</dd>
-					</div>
-					<div>
-						<dt>Category</dt>
-						<dd>{project.category}</dd>
-					</div>
-				</dl>
-			</div>
-		</header>
-		<div class="detail-body">
-			<div class="detail-copy">
-				<section>
-					<h2>Why this project</h2>
-					<p>{project.motivation}</p>
-				</section>
-				<section>
-					<h2>My contribution</h2>
-					<p>{project.contribution}</p>
-				</section>
-				<section>
-					<h2>Development notes</h2>
-					<ul class="milestones">
-						{#each project.milestones as milestone (milestone)}<li>{milestone}</li>{/each}
+<div class="project-reading">
+	{#if project.slug === 'rocky'}
+		<RockyProject />
+	{:else if project.slug === 'sidequest'}
+		<SideQuestProject />
+	{:else if project.slug === 'password-manager'}
+		<PasswordManagerProject />
+	{:else if project.slug === 'onetask-cli'}
+		<OneTaskCaseStudy />
+	{:else if project.slug === 'towtruck-alert'}
+		<TowTruckCaseStudy />
+	{:else if project.slug === 'workout-journal'}
+		<WorkoutJournalProject />
+	{:else if project.slug === 'notes-app'}
+		<NotesAppProject />
+	{:else}
+		<main class="page">
+			<a class="back-link" href={resolve('/projects')}>← Back to projects</a>
+			<header class="detail-header">
+				<div>
+					<p class="eyebrow">Project file</p>
+					<h1>{project.title}</h1>
+				</div>
+				<div class="detail-header__summary">
+					<p>{project.overview}</p>
+					<dl class="detail-meta">
+						<div>
+							<dt>Status</dt>
+							<dd>{project.status}</dd>
+						</div>
+						<div>
+							<dt>Category</dt>
+							<dd>{project.category}</dd>
+						</div>
+					</dl>
+				</div>
+			</header>
+			<div class="detail-body">
+				<div class="detail-copy">
+					<section>
+						<h2>Why this project</h2>
+						<p>{project.motivation}</p>
+					</section>
+					<section>
+						<h2>My contribution</h2>
+						<p>{project.contribution}</p>
+					</section>
+					<section>
+						<h2>Development notes</h2>
+						<ul class="milestones">
+							{#each project.milestones as milestone (milestone)}<li>{milestone}</li>{/each}
+						</ul>
+					</section>
+				</div>
+				<aside class="detail-aside">
+					<p class="eyebrow">Working set</p>
+					<h2>Technology</h2>
+					<ul class="tag-list">
+						{#each project.technologies as technology (technology)}<li>{technology}</li>{/each}
 					</ul>
-				</section>
+					{#if project.githubUrl}<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+						<a
+							class="button button--solid"
+							href={project.githubUrl}
+							target="_blank"
+							rel="external noreferrer">View on GitHub ↗</a
+						>{/if}
+				</aside>
 			</div>
-			<aside class="detail-aside">
-				<p class="eyebrow">Working set</p>
-				<h2>Technology</h2>
-				<ul class="tag-list">
-					{#each project.technologies as technology (technology)}<li>{technology}</li>{/each}
-				</ul>
-				{#if project.githubUrl}<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-					<a class="button button--solid" href={project.githubUrl} target="_blank" rel="noreferrer"
-						>View on GitHub ↗</a
-					>{/if}
-			</aside>
-		</div>
-	</main>
-{/if}
+		</main>
+	{/if}
+</div>

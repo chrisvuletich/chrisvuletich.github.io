@@ -2,4 +2,4 @@
 	import Bookshelf from '$lib/components/Bookshelf.svelte';
 </script>
 
-<Bookshelf />
+<div class="bookshelf-shell"><Bookshelf /></div>

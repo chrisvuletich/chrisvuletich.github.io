@@ -1,5 +1,8 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script lang="ts">
+	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
+	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
+	import { projectSections } from '$lib/data/project-sections';
 	import { base, resolve } from '$app/paths';
 
 	const githubUrl = 'https://github.com/chrisvuletich/sidequest';
@@ -101,14 +104,15 @@
 			</div>
 		</dl>
 	</header>
+	<div class="case-opening"><ProjectPreview slug="sidequest" /></div>
+	<CaseStudyIndex sections={projectSections['sidequest']} />
 
 	<section
 		class="sidequest-project__section sidequest-project__split"
 		aria-labelledby="overview-title"
 	>
 		<div>
-			<p class="eyebrow">01 / Overview</p>
-			<h2 id="overview-title">A useful answer to “what should I do?”</h2>
+			<h2 id="overview-title">Overview</h2>
 		</div>
 		<div class="sidequest-project__prose">
 			<p>
@@ -124,8 +128,7 @@
 	</section>
 
 	<section class="sidequest-project__section" aria-labelledby="why-title">
-		<p class="eyebrow">02 / Why I built it</p>
-		<h2 id="why-title">I built SideQuest to solve a problem I kept having.</h2>
+		<h2 id="why-title">Why I built it</h2>
 		<div class="sidequest-project__prose">
 			<p>
 				There were plenty of days when I wanted to get out of my apartment and do something, but I
@@ -141,8 +144,7 @@
 	</section>
 
 	<section class="sidequest-project__section" aria-labelledby="flow-title">
-		<p class="eyebrow">03 / How it works</p>
-		<h2 id="flow-title">Choose quickly or narrow the mood.</h2>
+		<h2 id="flow-title">How it works</h2>
 		<ol class="sidequest-project__flow">
 			<li>
 				<span>01</span>
@@ -185,8 +187,7 @@
 	</section>
 
 	<section class="sidequest-project__section" aria-labelledby="features-title">
-		<p class="eyebrow">04 / Features</p>
-		<h2 id="features-title">Designed around a small decision.</h2>
+		<h2 id="features-title">Features</h2>
 		<div class="sidequest-project__card-grid">
 			{#each features as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -196,8 +197,7 @@
 	</section>
 
 	<section class="sidequest-project__section" aria-labelledby="technical-title">
-		<p class="eyebrow">05 / Technical highlights</p>
-		<h2 id="technical-title">A protected catalog behind a focused interface.</h2>
+		<h2 id="technical-title">Technical highlights</h2>
 		<div class="sidequest-project__technical-list">
 			{#each technicalHighlights as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -211,8 +211,7 @@
 		aria-labelledby="learning-title"
 	>
 		<div>
-			<p class="eyebrow">06 / What I learned</p>
-			<h2 id="learning-title">A stronger product comes from a clearer idea.</h2>
+			<h2 id="learning-title">What I learned</h2>
 		</div>
 		<div class="sidequest-project__prose">
 			<p>
@@ -230,8 +229,7 @@
 		aria-labelledby="status-title"
 	>
 		<div>
-			<p class="eyebrow">07 / Current status</p>
-			<h2 id="status-title">Active and still being refined.</h2>
+			<h2 id="status-title">Current status</h2>
 		</div>
 		<p>
 			SideQuest is in active development. The core discovery, filtering, favorites, history, guides,
@@ -241,8 +239,7 @@
 	</section>
 
 	<section class="sidequest-project__section" aria-labelledby="screenshots-title">
-		<p class="eyebrow">08 / Screenshots</p>
-		<h2 id="screenshots-title">A mobile-first experience.</h2>
+		<h2 id="screenshots-title">Screenshots</h2>
 		<div class="sidequest-project__screenshots">
 			{#each screenshots as screenshot (screenshot.file)}
 				<figure>
@@ -261,8 +258,7 @@
 
 	<section class="sidequest-project__info" aria-labelledby="info-title">
 		<div>
-			<p class="eyebrow">Project information</p>
-			<h2 id="info-title">The working set.</h2>
+			<h2 id="info-title">Project details</h2>
 		</div>
 		<dl>
 			<div>

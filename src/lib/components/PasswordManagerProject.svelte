@@ -1,5 +1,8 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script lang="ts">
+	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
+	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
+	import { projectSections } from '$lib/data/project-sections';
 	import { base, resolve } from '$app/paths';
 
 	const githubUrl = 'https://github.com/chrisvuletich/password-manager';
@@ -65,14 +68,15 @@
 			</div>
 		</dl>
 	</header>
+	<div class="case-opening"><ProjectPreview slug="password-manager" /></div>
+	<CaseStudyIndex sections={projectSections['password-manager']} />
 
 	<section
 		class="password-manager__section password-manager__split"
 		aria-labelledby="overview-title"
 	>
 		<div>
-			<p class="eyebrow">01 / Overview</p>
-			<h2 id="overview-title">A practical vault for everyday logins.</h2>
+			<h2 id="overview-title">Overview</h2>
 		</div>
 		<div class="password-manager__prose">
 			<p>
@@ -85,8 +89,7 @@
 	</section>
 
 	<section class="password-manager__section" aria-labelledby="why-title">
-		<p class="eyebrow">02 / Why I built it</p>
-		<h2 id="why-title">Learning how sensitive data should be handled.</h2>
+		<h2 id="why-title">Why I built it</h2>
 		<div class="password-manager__prose">
 			<p>
 				I wanted to learn more about encryption, password-based key generation, secure local
@@ -97,8 +100,7 @@
 	</section>
 
 	<section class="password-manager__section" aria-labelledby="works-title">
-		<p class="eyebrow">03 / How it works</p>
-		<h2 id="works-title">The master password unlocks the vault.</h2>
+		<h2 id="works-title">How it works</h2>
 		<div
 			class="password-manager__architecture"
 			aria-label="Master password to salt and key derivation to encryption key to encrypted local vault"
@@ -122,8 +124,7 @@
 	</section>
 
 	<section class="password-manager__section" aria-labelledby="security-title">
-		<p class="eyebrow">04 / Security details</p>
-		<h2 id="security-title">Technical choices with clear jobs.</h2>
+		<h2 id="security-title">Security details</h2>
 		<div class="password-manager__detail-grid">
 			{#each securityDetails as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -133,16 +134,14 @@
 	</section>
 
 	<section class="password-manager__section" aria-labelledby="features-title">
-		<p class="eyebrow">05 / Features</p>
-		<h2 id="features-title">A focused command-line workflow.</h2>
+		<h2 id="features-title">Features</h2>
 		<div class="password-manager__feature-grid">
 			{#each features as feature (feature)}<article><h3>{feature}</h3></article>{/each}
 		</div>
 	</section>
 
 	<section class="password-manager__section" aria-labelledby="testing-title">
-		<p class="eyebrow">06 / Testing</p>
-		<h2 id="testing-title">Automated checks around the important behaviors.</h2>
+		<h2 id="testing-title">Testing</h2>
 		<div class="password-manager__prose">
 			<p>
 				The project includes automated tests for correct and incorrect master passwords, encryption
@@ -154,8 +153,7 @@
 	</section>
 
 	<section class="password-manager__section" aria-labelledby="lessons-title">
-		<p class="eyebrow">07 / What I learned</p>
-		<h2 id="lessons-title">Good structure matters as much as encryption.</h2>
+		<h2 id="lessons-title">What I learned</h2>
 		<div class="password-manager__prose">
 			<p>
 				This project helped me understand encrypted data persistence, password-based key derivation,
@@ -167,8 +165,7 @@
 	</section>
 
 	<section class="password-manager__section" aria-labelledby="limitations-title">
-		<p class="eyebrow">08 / Limitations</p>
-		<h2 id="limitations-title">A learning project with honest boundaries.</h2>
+		<h2 id="limitations-title">Limitations</h2>
 		<div class="password-manager__prose">
 			<p>
 				Password Manager is stored locally, has no cloud sync or browser extension, and has not
@@ -179,8 +176,7 @@
 	</section>
 
 	<section class="password-manager__screenshots" aria-labelledby="screenshots-title">
-		<p class="eyebrow">09 / CLI screenshot</p>
-		<h2 id="screenshots-title">Command-Line Interface</h2>
+		<h2 id="screenshots-title">CLI screenshot</h2>
 		<div class="password-manager__screenshot-frame">
 			<img
 				src={`${base}${screenshotPath}`}
@@ -191,8 +187,7 @@
 	</section>
 
 	<section class="password-manager__info" aria-labelledby="info-title">
-		<p class="eyebrow">Project information</p>
-		<h2 id="info-title">Tools and boundaries.</h2>
+		<h2 id="info-title">Project details</h2>
 		<dl>
 			<div>
 				<dt>Type</dt>

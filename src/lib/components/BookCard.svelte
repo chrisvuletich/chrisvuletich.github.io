@@ -50,7 +50,6 @@
 				{#if book.cover}<img src={book.cover} alt="" />{/if}
 			</div>
 			<div>
-				<p class="eyebrow">Reading journal entry</p>
 				<h3>{book.title}</h3>
 				<p class="book-card__author">{book.author}</p>
 				{#if book.review}<p class="book-details__review">{book.review}</p>{/if}

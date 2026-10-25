@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	const canonical = 'https://vuletich.dev/about';
 </script>
 
@@ -17,44 +18,51 @@
 		content="summary"
 	/></svelte:head
 >
-<main class="content-page">
+<main class="content-page about-page">
 	<header class="content-page__intro">
-		<p class="eyebrow">About</p>
-		<h1>Making useful things, one project at a time.</h1>
-		<p class="content-page__lede">
-			I’m Christopher Vuletich, a computer science student at Kent State University entering my
-			senior year. I’m working toward a career in software engineering.
-		</p>
+		<div class="about-page__introduction">
+			<h1>About me</h1>
+			<p class="content-page__lede">
+				I’m Christopher Vuletich. I study computer science at Kent State University and want to work
+				as a software engineer.
+			</p>
+		</div>
+		<figure class="about-page__photo">
+			<img
+				src={`${base}/images/landscape/mountains-960.webp`}
+				alt="Autumn woodland and snow-covered mountains in the Swiss Alps"
+				width="960"
+				height="720"
+				decoding="async"
+			/>
+		</figure>
 	</header>
-	<div class="content-grid">
-		<p class="eyebrow">Notes from the desk</p>
+	<div class="content-grid content-grid--prose">
 		<div>
 			<section class="content-section">
 				<h2>Introduction</h2>
 				<p>
-					I’m especially interested in front-end development, useful software, AI, and computer
-					vision. I enjoy the tangible part of making: taking an idea, giving it a working shape,
-					and seeing a real result at the end.
+					I’m especially interested in front-end development, AI, and computer vision. I like taking
+					an idea and turning it into something I can actually use.
 				</p>
 				<p>
-					My interest in computer science started with games and stories about technology, early
-					Scratch projects, and building a website when I was younger. It has grown into an interest
-					in software that is practical and helps people.
+					I got interested in computer science through games, Scratch projects, and a website I
+					built when I was younger. Since then, I’ve become more interested in building software
+					that helps with everyday problems.
 				</p>
 			</section>
 			<section class="content-section">
 				<h2>How I work</h2>
 				<p>
-					I value finishing projects. That means keeping a scope honest, learning what a problem
-					needs, and staying with the less glamorous details that make a tool feel complete.
+					I try to keep projects small enough to finish. I’d rather get something working, use it,
+					and improve it than keep adding features before the basics are done.
 				</p>
 			</section>
 			<section class="content-section">
 				<h2>What I’m exploring</h2>
 				<p>
-					I’m continuing to build stronger interfaces and full-stack projects while exploring AI and
-					computer vision through focused experiments. Outside software, I also enjoy artwork and
-					photography—other ways of paying attention to detail and making something concrete.
+					I’m working on my front-end and full-stack skills, and learning more about AI and computer
+					vision through personal projects. Outside of coding, I enjoy art and photography.
 				</p>
 			</section>
 			<section class="content-section">

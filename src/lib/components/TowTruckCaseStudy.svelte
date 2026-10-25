@@ -1,5 +1,8 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script lang="ts">
+	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
+	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
+	import { projectSections } from '$lib/data/project-sections';
 	import { resolve } from '$app/paths';
 	import { towtruckCaseStudy as study } from '$lib/data/towtruck-case-study';
 	const githubUrl = 'https://github.com/chrisvuletich/towtruck-alert';
@@ -36,11 +39,12 @@
 			</div>
 		</dl>
 	</header>
+	<div class="case-opening"><ProjectPreview slug="towtruck-alert" /></div>
+	<CaseStudyIndex sections={projectSections['towtruck-alert']} />
 
 	<section class="case-section case-section--split" aria-labelledby="overview-title">
 		<div>
-			<p class="eyebrow">01 / Overview</p>
-			<h2 id="overview-title">From tow-truck idea to vision pipeline.</h2>
+			<h2 id="overview-title">Overview</h2>
 		</div>
 		<div class="case-prose">
 			<p>
@@ -57,8 +61,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="features-title">
-		<p class="eyebrow">02 / Current capabilities</p>
-		<h2 id="features-title">What the application does.</h2>
+		<h2 id="features-title">Current capabilities</h2>
 		<div class="feature-grid">
 			{#each study.features as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -69,8 +72,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="architecture-title">
 		<div>
-			<p class="eyebrow">03 / Workflow</p>
-			<h2 id="architecture-title">Each frame follows a clear path.</h2>
+			<h2 id="architecture-title">Workflow</h2>
 		</div>
 		<div
 			class="vision-flow"
@@ -95,8 +97,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="timeline-title">
-		<p class="eyebrow">04 / Learning progression</p>
-		<h2 id="timeline-title">A project built through visible milestones.</h2>
+		<h2 id="timeline-title">Learning progression</h2>
 		<ol class="learning-timeline">
 			{#each study.timeline as [title, text], index (title)}<li>
 					<p class="timeline__date">0{index + 1}</p>
@@ -109,8 +110,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="challenges-title">
-		<p class="eyebrow">05 / Challenges</p>
-		<h2 id="challenges-title">The debugging was part of the lesson.</h2>
+		<h2 id="challenges-title">Challenges</h2>
 		<div class="challenge-list">
 			{#each study.challenges as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -121,8 +121,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="learning-title">
 		<div>
-			<p class="eyebrow">06 / What I learned</p>
-			<h2 id="learning-title">Computer vision starts with fundamentals.</h2>
+			<h2 id="learning-title">What I learned</h2>
 		</div>
 		<div class="two-lists">
 			<ul>
@@ -138,8 +137,7 @@
 	</section>
 
 	<section class="towtruck-takeaway">
-		<p class="eyebrow">Takeaway</p>
-		<h2>A stronger foundation for what comes next.</h2>
+		<h2>Takeaway</h2>
 		<p>
 			Although TowTruck Alert began with a specific tow-truck use case, it evolved into a much
 			broader exploration of computer vision. The project gave me a practical foundation for future

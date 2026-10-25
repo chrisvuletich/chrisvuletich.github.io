@@ -8,24 +8,32 @@
 			slug: 'rocky',
 			image: '/images/project/rocky/after/new-dash.webp',
 			alt: 'Rocky dashboard showing courses, account details, and AI tools',
+			secondary: '/images/project/rocky/after/new-chat.webp',
+			secondaryAlt: 'Rocky AI chat interface',
 			fit: 'cover'
 		},
 		{
 			slug: 'sidequest',
 			image: '/images/project/sidequest/discover.png',
 			alt: 'SideQuest mobile discovery screen for choosing an activity',
+			secondary: '/images/project/sidequest/sidequest-result.png',
+			secondaryAlt: 'SideQuest activity suggestion screen',
 			fit: 'contain'
 		},
 		{
 			slug: 'workout-journal',
 			image: '/images/project/workout-log/history.webp',
 			alt: 'Workout Journal history screen showing previous training sessions',
+			secondary: null,
+			secondaryAlt: '',
 			fit: 'contain'
 		},
 		{
 			slug: 'password-manager',
 			image: '/images/project/password-manager/cli.png',
 			alt: 'Password Manager command-line interface showing available vault commands',
+			secondary: null,
+			secondaryAlt: '',
 			fit: 'contain'
 		}
 	] as const;
@@ -55,52 +63,58 @@
 
 <main class="home">
 	<section class="hero" aria-labelledby="hero-title">
-		<div class="hero__main">
-			<p class="eyebrow">Computer Science Student &amp; Software Developer</p>
-			<h1 id="hero-title">Chris<br />Vuletich</h1>
-			<p class="hero__lede">
-				I build useful software, web apps, and tools around problems I find interesting or run into
-				myself.
-			</p>
-			<div class="button-row">
-				<a class="button button--solid" href={resolve('/projects')}>View Projects</a>
-				<a class="button" href={resolve('/about')}>About Me</a>
-			</div>
-			<div class="hero__links" aria-label="Elsewhere">
-				<a href="https://github.com/chrisvuletich" target="_blank" rel="noreferrer"
-					>GitHub <span aria-hidden="true">↗</span></a
-				>
+		<img
+			class="hero__landscape"
+			src={`${base}/images/landscape/mountains-1920.webp`}
+			srcset={`${base}/images/landscape/mountains-960.webp 960w, ${base}/images/landscape/mountains-1920.webp 1920w`}
+			sizes="100vw"
+			width="1920"
+			height="1440"
+			alt="Clouds parting over snow-covered mountains and autumn forests in the Swiss Alps"
+			fetchpriority="high"
+		/>
+		<div class="hero__inner">
+			<div class="hero__main">
+				<p class="eyebrow">Computer Science Student &amp; Software Developer</p>
+				<h1 id="hero-title">Chris<br />Vuletich</h1>
+				<p class="hero__lede">
+					I’m a computer science student at Kent State. I build web apps and tools, usually to solve
+					a problem I’ve run into myself.
+				</p>
+				<div class="button-row">
+					<a class="button button--solid" href={resolve('/projects')}
+						>View Projects <span aria-hidden="true">↗</span></a
+					>
+					<a class="button" href={resolve('/about')}>About Me <span aria-hidden="true">→</span></a>
+				</div>
+				<div class="hero__links" aria-label="Elsewhere">
+					<a href="https://github.com/chrisvuletich" target="_blank" rel="noreferrer"
+						>GitHub <span aria-hidden="true">↗</span></a
+					>
+				</div>
 			</div>
 		</div>
-		<aside class="hero__notes" aria-label="Current direction">
-			<p class="eyebrow">Right now</p>
-			<p>
-				Finishing my computer science degree and building projects across full-stack development,
-				Python, and computer vision.
-			</p>
-		</aside>
 	</section>
 
 	<section class="site-guide" aria-labelledby="site-guide-title">
 		<div class="site-guide__heading">
-			<p class="eyebrow">A quick index</p>
-			<h2 id="site-guide-title">Around here</h2>
+			<h2 id="site-guide-title">Explore</h2>
 		</div>
 		<nav class="site-guide__list" aria-label="Explore the site">
 			<a href={resolve('/projects')}>
 				<span>01</span>
 				<strong>Projects</strong>
-				<p>Technical write-ups about things I’ve designed and built.</p>
+				<p>What I’ve built and how it works.</p>
 			</a>
 			<a href={resolve('/apps')}>
 				<span>02</span>
 				<strong>Apps</strong>
-				<p>Things I’ve made that you can use, explore, or interact with.</p>
+				<p>Apps and tools you can try.</p>
 			</a>
 			<a href={resolve('/about')}>
 				<span>03</span>
 				<strong>About</strong>
-				<p>A little more about me, my interests, and what I’m working toward.</p>
+				<p>My background and interests.</p>
 			</a>
 		</nav>
 	</section>
@@ -108,10 +122,8 @@
 	<section class="featured-work" aria-labelledby="featured-title">
 		<div class="section-heading">
 			<div>
-				<p class="eyebrow">Selected work</p>
 				<h2 id="featured-title">Featured Projects</h2>
 			</div>
-			<p>Four projects that show the range of software I like to build.</p>
 		</div>
 
 		<div class="featured-projects">
@@ -119,6 +131,7 @@
 				<a
 					class:featured-project--lead={index === 0}
 					class="featured-project"
+					data-project={project.slug}
 					href={resolve('/projects/[slug]', { slug: project.slug })}
 					aria-label={`View the ${project.title} project`}
 				>
@@ -130,8 +143,19 @@
 							src={`${base}${project.image}`}
 							alt={project.alt}
 							loading="lazy"
+							decoding="async"
 							draggable="false"
 						/>
+						{#if project.secondary}
+							<img
+								class="featured-project__secondary"
+								src={`${base}${project.secondary}`}
+								alt={project.secondaryAlt}
+								loading="lazy"
+								decoding="async"
+								draggable="false"
+							/>
+						{/if}
 					</div>
 					<div class="featured-project__content">
 						<p class="featured-project__meta">
@@ -157,20 +181,18 @@
 	</section>
 
 	<section class="about-preview" aria-labelledby="about-preview-title">
-		<p class="eyebrow">A little context</p>
-		<h2 id="about-preview-title">I like projects where I can see the result.</h2>
+		<h2 id="about-preview-title">About me</h2>
 		<p>
-			I’m a computer science student who enjoys building web apps, useful tools, and creative
-			technical projects—especially when the idea starts with a problem I’ve actually encountered.
+			Most of my projects start with something I want to use myself, from keeping track of workouts
+			to organizing my schoolwork. Outside of coding, I enjoy art and photography.
 		</p>
 		<a class="text-link" href={resolve('/about')}>More About Me <span aria-hidden="true">→</span></a
 		>
 	</section>
 
 	<section class="contact-cta">
-		<p class="eyebrow">Contact</p>
-		<h2>Let’s talk.</h2>
-		<p>I’m open to software engineering opportunities and conversations about useful software.</p>
+		<h2>Get in touch</h2>
+		<p>I’m looking for software engineering opportunities. You can reach me through GitHub.</p>
 		<a class="button button--solid" href={resolve('/contact')}>Get in Touch</a>
 	</section>
 </main>

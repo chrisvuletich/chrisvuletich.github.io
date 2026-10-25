@@ -4,6 +4,15 @@
 	import { page } from '$app/state';
 
 	let menuOpen = $state(false);
+	let menuButton: HTMLButtonElement;
+	const profileImage = `${base}/images/profile.jpg`;
+
+	function closeOnEscape(event: KeyboardEvent) {
+		if (event.key === 'Escape' && menuOpen) {
+			menuOpen = false;
+			menuButton?.focus();
+		}
+	}
 	const links = [
 		{ href: resolve('/'), path: `${base}/`, label: 'Home' },
 		{ href: resolve('/projects'), path: `${base}/projects`, label: 'Projects' },
@@ -23,13 +32,16 @@
 	}
 </script>
 
+<svelte:window onkeydown={closeOnEscape} />
+
 <header class="site-header">
 	<div class="site-header__inner">
-		<a class="site-mark" href={resolve('/')} aria-label="Christopher Vuletich home"
-			>CV<span>.</span></a
-		>
+		<a class="site-mark" href={resolve('/')} aria-label="Christopher Vuletich home">
+			<img class="site-avatar" src={profileImage} alt="" width="44" height="44" />
+		</a>
 		<button
 			class="menu-toggle"
+			bind:this={menuButton}
 			type="button"
 			aria-expanded={menuOpen}
 			aria-controls="site-navigation"

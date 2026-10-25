@@ -1,0 +1,493 @@
+/* Subpage compositions share the homepage palette without changing its layout. */
+.apps-directory {
+	gap: 3.5rem 2rem;
+	align-items: start;
+}
+.app-card {
+	min-height: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+}
+.app-card:hover {
+	background: transparent;
+}
+.app-card__preview {
+	min-width: 0;
+	overflow: hidden;
+	border-radius: var(--radius);
+}
+.app-card__preview .project-preview {
+	aspect-ratio: 1.55;
+}
+.app-card__body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+	padding: 1.5rem 0 2rem;
+	border-bottom: 1px solid var(--line);
+}
+.app-card__topline {
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 1rem;
+}
+.app-card__topline > div:last-child {
+	text-align: left;
+}
+.app-card__topline p {
+	margin-bottom: 0.35rem;
+	font-family: var(--sans);
+	letter-spacing: 0.09em;
+}
+.app-card__topline span {
+	font-family: var(--sans);
+	text-transform: none;
+	font-size: 0.75rem;
+	letter-spacing: 0;
+}
+.app-card h2 {
+	margin-top: 1.1rem;
+	font-size: clamp(2.25rem, 3.4vw, 3.25rem);
+	line-height: 1.05;
+}
+.app-card__description {
+	line-height: 1.85;
+}
+.app-card__actions {
+	padding-top: 1.7rem;
+}
+.app-card--text-only {
+	align-self: stretch;
+	margin-top: 0.5rem;
+}
+.app-card--text-only .app-card__body {
+	padding: 2rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+.app-card__books {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6%;
+	aspect-ratio: 1.55;
+	padding: 2.5rem 1rem;
+	border: 1px solid #665d49;
+	border-radius: var(--radius);
+	background: #3b382e;
+}
+.app-card__books img {
+	display: block;
+	width: 23%;
+	max-height: 100%;
+	object-fit: contain;
+	box-shadow: 8px 12px 18px #19170f40;
+}
+
+.project-reading h2 {
+	font-size: clamp(2rem, 3.2vw, 3.2rem);
+	line-height: 1.1;
+}
+.project-reading
+	:is(
+		.case-prose p,
+		.sidequest-project__prose p,
+		.password-manager__prose p,
+		.notes-project__prose p,
+		.workout-journal__prose p
+	) {
+	font-size: 1.02rem;
+	line-height: 1.85;
+}
+.project-reading
+	:is(
+		.case-section,
+		.sidequest-project__section,
+		.password-manager__section,
+		.notes-project__section,
+		.workout-journal__section
+	) {
+	padding-block: clamp(3rem, 6vw, 5rem);
+}
+.project-reading :is(.notes-project__sidebar, .workout-journal__sidebar) {
+	padding: 1.5rem;
+}
+.project-reading
+	:is(.gallery-pair img, .notes-project__screenshots img, .workout-journal__screenshots img) {
+	border-radius: var(--radius);
+	box-shadow: 0 10px 25px #30281c0a;
+}
+.project-reading .workout-journal__screenshots {
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+}
+.project-reading .workout-journal__screenshots img {
+	aspect-ratio: auto;
+	height: auto;
+}
+.project-reading .project-evolution__grid {
+	gap: 3rem 2rem;
+}
+.project-reading .evolution-comparison__heading {
+	min-height: 7rem;
+}
+.project-reading .rocky-gallery summary {
+	border-radius: var(--radius);
+	font-family: var(--sans);
+	text-transform: none;
+	font-size: 0.8rem;
+}
+.project-reading .terminal {
+	box-shadow: 0 12px 25px #2e291d15;
+}
+.project-reading :is(.sidequest-project__info, .password-manager__info) {
+	margin-top: 2.5rem;
+}
+
+.about-page .content-page__intro {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+	align-items: center;
+	gap: clamp(3rem, 7vw, 7rem);
+	max-width: none;
+}
+.about-page__introduction {
+	min-width: 0;
+}
+.about-page .content-page__intro h1 {
+	font-size: clamp(4rem, 7.5vw, 7rem);
+	line-height: 1.02;
+}
+.about-page .content-page__lede {
+	max-width: 30rem;
+	font-size: 1.12rem;
+}
+.about-page__photo {
+	aspect-ratio: 4 / 4.5;
+	max-height: 30rem;
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid var(--line-strong);
+	border-radius: var(--radius);
+}
+.about-page__photo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 66% 65%;
+}
+.about-page .content-grid {
+	--ink: #302f27;
+	--ink-muted: #615e51;
+	--rust: #795e3f;
+	--line: #d0c8b8;
+	--line-strong: #a9a28f;
+	max-width: none;
+	margin-top: clamp(3rem, 6vw, 5rem);
+	padding: clamp(1.5rem, 5vw, 4rem);
+	border: 0;
+	border-radius: var(--radius);
+	color: var(--ink);
+	background: #e9e3d7;
+}
+.about-page .content-section {
+	display: grid;
+	grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+	gap: 1.25rem clamp(2rem, 4vw, 4rem);
+	padding-block: 2.5rem;
+	border-bottom: 1px solid var(--line);
+}
+.about-page .content-section:first-child {
+	padding-top: 0;
+}
+.about-page .content-section:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+.about-page .content-section + .content-section {
+	margin-top: 0;
+}
+.about-page .content-section h2 {
+	grid-column: 1;
+	grid-row: 1 / span 3;
+	max-width: 12ch;
+	margin: 0;
+	font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+	line-height: 1.12;
+}
+.about-page .content-section > p,
+.about-page .tool-groups {
+	grid-column: 2;
+	margin: 0;
+	line-height: 1.85;
+}
+.about-page .tool-groups {
+	gap: 2rem;
+}
+.about-page .tool-groups h3 {
+	font: 500 0.75rem var(--sans);
+	letter-spacing: 0.07em;
+}
+.about-page .tool-groups ul {
+	font-size: 0.95rem;
+	line-height: 1.8;
+}
+
+.contact-page {
+	min-height: calc(100svh - 13rem);
+}
+.contact-page .content-page__intro {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: end;
+	gap: 4rem;
+	max-width: none;
+}
+.contact-page .content-page__lede {
+	max-width: 32rem;
+	margin: 0;
+}
+.contact-page .content-grid {
+	max-width: 46rem;
+	padding-top: 0;
+	border: 0;
+	margin-top: 4rem;
+}
+.contact-page .contact-links {
+	margin-top: 0;
+}
+.contact-page .contact-links a {
+	padding-block: 1.6rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+}
+.contact-page .contact-links a > span:last-child {
+	display: grid;
+	place-items: center;
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid var(--line-strong);
+	border-radius: 50%;
+	font: 1.4rem var(--sans);
+	transition: border-color var(--transition);
+}
+.contact-page .contact-links a:hover > span:last-child {
+	border-color: var(--rust);
+}
+.contact-page .contact-note {
+	padding: 0;
+	margin-top: 1.5rem;
+	border: 0;
+	background: transparent;
+	font-size: 0.9rem;
+}
+
+.bookshelf-shell {
+	color-scheme: light;
+	--paper: #eae3d6;
+	--paper-deep: #dfd6c5;
+	--surface: #f4eee3;
+	--ink: #34352c;
+	--ink-muted: #646054;
+	--rust: #7c5d3d;
+	--moss: #58644a;
+	--line: #cfc6b5;
+	--line-strong: #a79d88;
+	color: var(--ink);
+	background: var(--paper);
+}
+.bookshelf-shell .books-intro {
+	max-width: 45rem;
+}
+.bookshelf-shell .books-intro h1 {
+	font-size: clamp(3.6rem, 7vw, 6.8rem);
+	letter-spacing: -0.045em;
+}
+.bookshelf-shell .books-intro > p {
+	font-size: 1.05rem;
+}
+.bookshelf-shell .book-stats {
+	margin-top: 1.5rem;
+	border-width: 1px 0;
+	border-radius: 0;
+	background: transparent;
+}
+.bookshelf-shell .book-stats div {
+	padding: 1.3rem;
+}
+.bookshelf-shell .book-stats div:first-child {
+	padding-left: 0;
+}
+.bookshelf-shell .book-stats strong {
+	font-size: 2.5rem;
+}
+.bookshelf-shell .book-stats span,
+.bookshelf-shell .book-stats small {
+	font-family: var(--sans);
+	text-transform: none;
+	font-size: 0.75rem;
+}
+.bookshelf-shell .books-range p,
+.bookshelf-shell .year-picker label,
+.bookshelf-shell .book-controls label {
+	font-family: var(--sans);
+	text-transform: none;
+	font-size: 0.78rem;
+	letter-spacing: 0;
+}
+.bookshelf-shell .book-grid {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: clamp(2rem, 5vw, 5rem);
+	row-gap: 2rem;
+}
+.bookshelf-shell .book-card {
+	padding: 1.5rem 0;
+	border-width: 0 0 1px;
+	border-radius: 0;
+	background: transparent;
+}
+.bookshelf-shell .book-card__trigger {
+	grid-template-columns: 7.5rem minmax(0, 1fr);
+	align-items: center;
+	gap: 1.5rem;
+}
+.bookshelf-shell .book-cover {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+}
+.bookshelf-shell .book-cover img {
+	filter: drop-shadow(3px 7px 5px #342a1d22);
+}
+.bookshelf-shell .book-card h2 {
+	font-size: clamp(1.5rem, 2.2vw, 2rem);
+	line-height: 1.08;
+}
+.bookshelf-shell .book-card__meta,
+.bookshelf-shell .book-card__rating {
+	font-family: var(--sans);
+	font-size: 0.68rem;
+}
+.bookshelf-shell .book-card__cue {
+	font-family: var(--sans);
+}
+.bookshelf-shell .book-card:has(.book-details) {
+	padding: 1.5rem;
+	border: 1px solid var(--line-strong);
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+.bookshelf-shell .book-details {
+	padding-top: 2rem;
+	gap: 2rem;
+}
+.bookshelf-shell .book-details__review {
+	max-width: 65ch;
+	font-size: 1rem;
+	line-height: 1.85;
+}
+.bookshelf-shell .nightstand {
+	border-color: var(--line);
+	background: var(--paper-deep);
+}
+.bookshelf-shell .library-filters > summary {
+	font-family: var(--sans);
+	text-transform: none;
+	font-size: 0.82rem;
+	letter-spacing: 0;
+}
+.bookshelf-shell .library-filters[open] {
+	padding-inline: 1.25rem;
+	background: var(--surface);
+	border-radius: var(--radius);
+}
+.bookshelf-shell .book-controls {
+	align-items: end;
+}
+.bookshelf-shell .books-empty {
+	grid-column: 1 / -1;
+}
+.books-forward {
+	min-height: calc(100svh - 13rem);
+}
+
+@media (max-width: 900px) {
+	.about-page .content-page__intro {
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 2.5rem;
+	}
+	.contact-page .content-page__intro {
+		gap: 2rem;
+	}
+	.bookshelf-shell .book-card__trigger {
+		grid-template-columns: 5.5rem minmax(0, 1fr);
+		gap: 1rem;
+	}
+}
+@media (max-width: 700px) {
+	.apps-directory {
+		gap: 3rem;
+	}
+	.app-card__books {
+		padding: 2rem 1rem;
+	}
+	.app-card--text-only .app-card__body {
+		padding: 1.5rem;
+	}
+	.about-page .content-page__intro,
+	.about-page .content-section,
+	.contact-page .content-page__intro {
+		grid-template-columns: 1fr;
+	}
+	.about-page__photo {
+		aspect-ratio: 16/10;
+		max-height: 22rem;
+	}
+	.about-page .content-section h2,
+	.about-page .content-section > p,
+	.about-page .tool-groups {
+		grid-column: 1;
+		grid-row: auto;
+	}
+	.about-page .content-section h2 {
+		max-width: none;
+	}
+	.about-page .content-page__intro h1 {
+		font-size: clamp(3.5rem, 14vw, 5rem);
+	}
+	.bookshelf-shell .book-grid {
+		grid-template-columns: 1fr;
+	}
+	.bookshelf-shell .book-card__trigger {
+		grid-template-columns: 6rem minmax(0, 1fr);
+		gap: 1.25rem;
+	}
+	.bookshelf-shell .book-stats div {
+		padding: 1rem;
+	}
+	.bookshelf-shell .book-stats div:first-child {
+		padding-left: 1rem;
+	}
+	.bookshelf-shell .book-stats div {
+		border-bottom: 1px solid var(--line);
+	}
+	.project-reading .evolution-comparison__heading {
+		min-height: 0;
+	}
+	.project-reading .project-evolution__grid {
+		grid-template-columns: 1fr;
+	}
+	.contact-page .content-grid {
+		margin-top: 3rem;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.project-card__card-action span {
+		transform: none;
+	}
+}
