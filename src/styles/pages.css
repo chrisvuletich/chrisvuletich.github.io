@@ -11,7 +11,7 @@
 	font-family: var(--serif);
 	font-size: clamp(4rem, 8vw, 7.5rem);
 	font-weight: 400;
-	line-height: 0.88;
+	line-height: 1;
 	letter-spacing: -0.06em;
 }
 .content-page__lede {
@@ -112,7 +112,8 @@
 	align-self: start;
 	padding: 1.4rem;
 	border: 1px solid var(--line-strong);
-	background: rgba(255, 253, 247, 0.4);
+	border-radius: var(--radius);
+	background: var(--surface);
 }
 .detail-aside .tag-list {
 	margin-top: 0;
@@ -133,6 +134,10 @@
 }
 .content-grid > .eyebrow {
 	padding-top: 0.5rem;
+}
+.content-grid--prose {
+	grid-template-columns: minmax(0, 1fr);
+	max-width: 48rem;
 }
 .content-section + .content-section {
 	margin-top: 3rem;
@@ -191,7 +196,8 @@
 	border-left: 2px solid var(--rust);
 	color: var(--ink-muted);
 	line-height: 1.65;
-	background: rgba(235, 224, 208, 0.45);
+	border-radius: 0 var(--radius) var(--radius) 0;
+	background: var(--surface);
 }
 @media (max-width: 700px) {
 	.detail-header,

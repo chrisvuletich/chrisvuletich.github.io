@@ -67,11 +67,8 @@
 >
 <main class="books-page page">
 	<header class="books-intro">
-		<p class="eyebrow">My personal reading library</p>
 		<h1>Bookshelf</h1>
-		<p>
-			A record of the books I’ve read, the stories that stayed with me, and what I’m reading now.
-		</p>
+		<p>What I’m reading and what I thought of the books I’ve finished.</p>
 	</header>
 	<section class="books-range" aria-label="Statistics period">
 		<div class="year-picker">
@@ -108,9 +105,7 @@
 		</section>{/if}
 	{#if nightstandBooks.length}<section class="nightstand" aria-labelledby="nightstand-title">
 			<div>
-				<p class="eyebrow">A warm corner</p>
-				<h2 id="nightstand-title">On the nightstand</h2>
-				<p>Books currently keeping me company.</p>
+				<h2 id="nightstand-title">Currently reading</h2>
 			</div>
 			<ul>
 				{#each nightstandBooks as book (book.id)}<li
@@ -126,7 +121,6 @@
 	<section class="library" aria-labelledby="library-title">
 		<div class="library__heading">
 			<div>
-				<p class="eyebrow">Library index</p>
 				<h2 id="library-title">
 					{filteredLibraryBooks.length}
 					{filteredLibraryBooks.length === 1 ? 'book' : 'books'}
@@ -174,7 +168,7 @@
 						></label
 					>
 				</details>
-				><label
+				<label
 					>Sort <select bind:value={librarySort}
 						><option value="date-desc">Date finished: newest</option><option value="date-asc"
 							>Date finished: oldest</option

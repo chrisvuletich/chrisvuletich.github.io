@@ -1,4 +1,7 @@
 <script lang="ts">
+	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
+	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
+	import { projectSections } from '$lib/data/project-sections';
 	import { base, resolve } from '$app/paths';
 	import BeforeAfterComparison from '$lib/components/BeforeAfterComparison.svelte';
 	import { rockyProject as study } from '$lib/data/rocky-project';
@@ -31,11 +34,12 @@
 			</div>
 		</dl>
 	</header>
+	<div class="case-opening"><ProjectPreview slug="rocky" /></div>
+	<CaseStudyIndex sections={projectSections['rocky']} />
 
 	<section class="case-section case-section--split" aria-labelledby="overview-title">
 		<div>
-			<p class="eyebrow">01 / Overview</p>
-			<h2 id="overview-title">A controlled path to AI access.</h2>
+			<h2 id="overview-title">Overview</h2>
 		</div>
 		<div class="case-prose">
 			<p>
@@ -53,8 +57,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="role-title">
 		<div>
-			<p class="eyebrow">02 / My role</p>
-			<h2 id="role-title">Frontend first, then closer integration.</h2>
+			<h2 id="role-title">My role</h2>
 		</div>
 		<div class="case-prose">
 			<p>
@@ -72,8 +75,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="timeline-title">
-		<p class="eyebrow">03 / Timeline</p>
-		<h2 id="timeline-title">From course work to summer internship.</h2>
+		<h2 id="timeline-title">Timeline</h2>
 		<ol class="timeline">
 			{#each study.timeline as [date, text] (date)}<li>
 					<p class="timeline__date">{date}</p>
@@ -83,8 +85,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="contributions-title">
-		<p class="eyebrow">04 / Contributions</p>
-		<h2 id="contributions-title">What I built and integrated.</h2>
+		<h2 id="contributions-title">Contributions</h2>
 		<div class="contribution-grid">
 			{#each study.contributions as contribution (contribution.title)}<article>
 					<p class="eyebrow">{contribution.label}</p>
@@ -95,8 +96,7 @@
 	</section>
 
 	<section class="case-section project-evolution" aria-labelledby="evolution-title">
-		<p class="eyebrow">05 / Project evolution</p>
-		<h2 id="evolution-title">Project Evolution</h2>
+		<h2 id="evolution-title">Project evolution</h2>
 		<p class="project-evolution__intro">
 			These comparisons show how Rocky’s interface developed during the project, from early working
 			screens to a more cohesive application experience.
@@ -152,8 +152,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="architecture-title">
 		<div>
-			<p class="eyebrow">06 / Architecture</p>
-			<h2 id="architecture-title">How Rocky handled AI requests.</h2>
+			<h2 id="architecture-title">Architecture</h2>
 		</div>
 		<div>
 			<div
@@ -190,8 +189,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="challenges-title">
-		<p class="eyebrow">07 / Engineering challenges</p>
-		<h2 id="challenges-title">Where the work got more interesting.</h2>
+		<h2 id="challenges-title">Engineering challenges</h2>
 		<div class="challenge-list">
 			{#each study.challenges as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -202,8 +200,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="stack-title">
 		<div>
-			<p class="eyebrow">08 / Technology</p>
-			<h2 id="stack-title">Tools I used, and systems I worked alongside.</h2>
+			<h2 id="stack-title">Technology</h2>
 		</div>
 		<div class="stack-groups">
 			<div>
@@ -227,8 +224,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="results-title">
 		<div>
-			<p class="eyebrow">09 / Outcomes & learning</p>
-			<h2 id="results-title">A first sustained experience across service boundaries.</h2>
+			<h2 id="results-title">Outcomes & learning</h2>
 		</div>
 		<div class="two-lists">
 			<div>

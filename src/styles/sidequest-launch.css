@@ -1,5 +1,5 @@
 body:has(.sidequest-product-shell) {
-	background: #29241e;
+	background: #1c1d18;
 }
 
 body:has(.sidequest-product-shell)::before,
@@ -10,14 +10,14 @@ body:has(.sidequest-product-shell) .site-footer {
 
 .sidequest-product-shell {
 	--sq-ink: #f4e6cb;
-	--sq-paper: #29241e;
-	--sq-card: #393127;
-	--sq-accent: #c6754e;
-	--sq-accent-deep: #914c34;
-	--sq-moss: #9da477;
-	--sq-ochre: #bd8d48;
-	--sq-line: #70604c;
-	--sq-muted: #c8b79f;
+	--sq-paper: #1c1d18;
+	--sq-card: #2b2c24;
+	--sq-accent: #d49e7c;
+	--sq-accent-deep: #c18a68;
+	--sq-moss: #b0b998;
+	--sq-ochre: #cfb384;
+	--sq-line: #62624e;
+	--sq-muted: #c8bfae;
 	--sq-shadow: #08060358;
 	--sq-fraunces: 'Fraunces', Georgia, serif;
 	--sq-sans: 'Nunito Sans', Arial, sans-serif;
@@ -26,28 +26,9 @@ body:has(.sidequest-product-shell) .site-footer {
 	min-height: 100svh;
 	overflow: hidden;
 	color: var(--sq-ink);
-	background:
-		radial-gradient(ellipse at 50% -12%, rgba(255, 249, 222, 0.11), transparent 45rem),
-		var(--sq-paper);
+	background: var(--sq-paper);
 	font-family: var(--sq-sans);
 	color-scheme: dark;
-}
-
-.sidequest-product-shell::before {
-	position: fixed;
-	z-index: 0;
-	inset: 0;
-	pointer-events: none;
-	opacity: 0.17;
-	background-image:
-		radial-gradient(var(--sq-ink) 0.4px, transparent 0.7px),
-		radial-gradient(var(--sq-ink) 0.35px, transparent 0.65px);
-	background-position:
-		0 0,
-		3px 4px;
-	background-size: 9px 9px;
-	mask-image: linear-gradient(#0005, transparent 68%);
-	content: '';
 }
 
 .sidequest-product-shell a:focus-visible {
@@ -113,7 +94,7 @@ body:has(.sidequest-product-shell) .site-footer {
 	padding: 0 1rem;
 	border: 1px solid var(--sq-accent-deep);
 	border-radius: 2px;
-	color: #fff8e9;
+	color: #25251e;
 	background: var(--sq-accent);
 	box-shadow: 2px 3px 0 var(--sq-accent-deep);
 }
@@ -228,13 +209,13 @@ body:has(.sidequest-product-shell) .site-footer {
 
 .sidequest-launch__button--primary {
 	border: 1px solid var(--sq-accent-deep);
-	color: #fff8e9;
+	color: #25251e;
 	background: var(--sq-accent);
 	box-shadow: 3px 4px 0 var(--sq-accent-deep);
 }
 
 .sidequest-launch__button--primary:hover {
-	color: #fff8e9;
+	color: #25251e;
 	transform: translate(-1px, -1px);
 	box-shadow: 4px 5px 0 var(--sq-accent-deep);
 }
@@ -261,7 +242,7 @@ body:has(.sidequest-product-shell) .site-footer {
 	position: relative;
 	border: 1px solid var(--sq-line);
 	border-radius: 1px;
-	background: linear-gradient(125deg, rgba(255, 248, 233, 0.15), transparent 36%), var(--sq-card);
+	background: var(--sq-card);
 	box-shadow:
 		5px 6px 0 var(--sq-shadow),
 		inset 0 0 0 3px color-mix(in srgb, var(--sq-card) 84%, var(--sq-line));

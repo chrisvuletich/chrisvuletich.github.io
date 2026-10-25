@@ -1,5 +1,8 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script lang="ts">
+	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
+	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
+	import { projectSections } from '$lib/data/project-sections';
 	import { resolve } from '$app/paths';
 	import { onetaskCaseStudy as study } from '$lib/data/onetask-case-study';
 
@@ -37,11 +40,12 @@
 			</div>
 		</dl>
 	</header>
+	<div class="case-opening"><ProjectPreview slug="onetask-cli" /></div>
+	<CaseStudyIndex sections={projectSections['onetask-cli']} />
 
 	<section class="case-section case-section--split" aria-labelledby="overview-title">
 		<div>
-			<p class="eyebrow">01 / Overview</p>
-			<h2 id="overview-title">A small tool, built all the way through.</h2>
+			<h2 id="overview-title">Overview</h2>
 		</div>
 		<div class="case-prose">
 			<p>
@@ -58,8 +62,7 @@
 	</section>
 
 	<section class="case-section" aria-labelledby="features-title">
-		<p class="eyebrow">02 / Current features</p>
-		<h2 id="features-title">Implemented functionality.</h2>
+		<h2 id="features-title">Current features</h2>
 		<div class="feature-grid">
 			{#each study.features as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -70,8 +73,7 @@
 
 	<section class="case-section case-section--split" aria-labelledby="demo-title">
 		<div>
-			<p class="eyebrow">03 / Terminal demo</p>
-			<h2 id="demo-title">A typical task session.</h2>
+			<h2 id="demo-title">Terminal demo</h2>
 		</div>
 		<div class="terminal" aria-label="Example OneTask CLI terminal session">
 			<div class="terminal__bar"><span></span><span></span><span></span><strong>tm</strong></div>
@@ -110,8 +112,7 @@ Program Saving...... Closing!</code
 
 	<section class="case-section case-section--split" aria-labelledby="works-title">
 		<div>
-			<p class="eyebrow">04 / How it works</p>
-			<h2 id="works-title">A deliberately simple structure.</h2>
+			<h2 id="works-title">How it works</h2>
 		</div>
 		<div>
 			<ol class="command-flow">
@@ -137,8 +138,7 @@ Program Saving...... Closing!</code
 	</section>
 
 	<section class="case-section" aria-labelledby="evolution-title">
-		<p class="eyebrow">05 / Evolution</p>
-		<h2 id="evolution-title">Built in small, useful increments.</h2>
+		<h2 id="evolution-title">Evolution</h2>
 		<ol class="timeline timeline--five">
 			{#each study.timeline as [date, text] (date)}<li>
 					<p class="timeline__date">{date}</p>
@@ -148,8 +148,7 @@ Program Saving...... Closing!</code
 	</section>
 
 	<section class="case-section" aria-labelledby="lessons-title">
-		<p class="eyebrow">06 / Challenges & lessons</p>
-		<h2 id="lessons-title">The project taught me more than syntax.</h2>
+		<h2 id="lessons-title">Challenges & lessons</h2>
 		<div class="challenge-list">
 			{#each study.lessons as [title, text] (title)}<article>
 					<h3>{title}</h3>
@@ -160,8 +159,7 @@ Program Saving...... Closing!</code
 
 	<section class="case-section case-section--split" aria-labelledby="status-title">
 		<div>
-			<p class="eyebrow">07 / Status & roadmap</p>
-			<h2 id="status-title">Clear about what’s here and what’s next.</h2>
+			<h2 id="status-title">Status & roadmap</h2>
 		</div>
 		<div class="status-groups">
 			<div>
@@ -187,8 +185,7 @@ Program Saving...... Closing!</code
 
 	<section class="case-section case-section--split" aria-labelledby="tech-title">
 		<div>
-			<p class="eyebrow">08 / Skills & technologies</p>
-			<h2 id="tech-title">A practical Python workflow.</h2>
+			<h2 id="tech-title">Skills & technologies</h2>
 		</div>
 		<div>
 			<ul class="tag-list">
@@ -202,8 +199,7 @@ Program Saving...... Closing!</code
 	</section>
 
 	<section class="onetask-cta">
-		<p class="eyebrow">Repository</p>
-		<h2>See the project history.</h2>
+		<h2>Repository</h2>
 		<p>OneTask is an ongoing personal project, with v0.1 released and v0.2 development underway.</p>
 		<a class="button button--solid" href={githubUrl} target="_blank" rel="noreferrer"
 			>Open OneTask on GitHub ↗</a

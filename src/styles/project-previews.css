@@ -1,0 +1,232 @@
+.project-preview {
+	position: relative;
+	display: grid;
+	place-items: center;
+	aspect-ratio: 1.5;
+	min-width: 0;
+	width: 100%;
+	padding: clamp(1rem, 3vw, 2.5rem);
+	overflow: hidden;
+	border: 1px solid #515344;
+	border-radius: var(--radius);
+	background: #383e32;
+	transition: border-color var(--transition);
+}
+.project-preview__primary {
+	display: block;
+	width: 100%;
+	min-height: 0;
+	max-height: 100%;
+	object-fit: contain;
+	border-radius: 3px;
+	box-shadow: 0 18px 35px #10170e30;
+}
+.project-preview__secondary {
+	position: absolute;
+	right: -5%;
+	bottom: -6%;
+	width: 58%;
+	border: 1px solid #636756;
+	border-radius: 4px;
+	box-shadow: 0 12px 30px #10170e40;
+}
+.project-preview[data-project='sidequest'] {
+	background: #443b31;
+}
+.project-preview[data-project='sidequest'] img {
+	position: absolute;
+	top: 8%;
+	left: 14%;
+	width: 34%;
+	height: auto;
+	max-height: none;
+	border: 1px solid #8c7860;
+	border-radius: 10px;
+}
+.project-preview[data-project='sidequest'] .project-preview__secondary {
+	top: 21%;
+	left: 53%;
+	bottom: auto;
+}
+.project-preview[data-project='rocky'] .project-preview__primary,
+.project-preview[data-project='notes-app'] .project-preview__primary,
+.project-preview[data-project='workout-journal'] .project-preview__primary {
+	position: absolute;
+	top: 12%;
+	left: 6%;
+	width: 88%;
+	height: auto;
+	border: 1px solid #787c6a;
+}
+.project-preview[data-project='notes-app'] {
+	background: #3e3d34;
+}
+.project-preview[data-project='password-manager'],
+.project-preview[data-project='onetask-cli'] {
+	background: #302d28;
+}
+.project-preview__terminal {
+	width: 100%;
+	min-width: 0;
+	border: 1px solid #6c6558;
+	border-radius: 4px;
+	color: #eee8da;
+	background: #20231f;
+	box-shadow: 0 14px 32px #1114;
+}
+.project-preview__terminal > p {
+	margin: 0;
+	padding: 0.7rem 1rem;
+	border-bottom: 1px solid #494c40;
+	color: #c3b08e;
+	background: #292e25;
+	font: 0.7rem var(--mono);
+}
+.project-preview__terminal pre {
+	overflow-x: auto;
+	margin: 0;
+	padding: 1.2rem;
+	font: clamp(0.56rem, 1.1vw, 0.75rem)/1.8 var(--mono);
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+.project-preview[data-project='onetask-cli'],
+.project-preview[data-project='towtruck-alert'] {
+	aspect-ratio: auto;
+	min-height: 24rem;
+}
+.project-preview[data-project='towtruck-alert'] {
+	background: #303933;
+}
+.project-preview__workflow {
+	width: 100%;
+	color: #eee8da;
+}
+.project-preview__workflow > p {
+	margin: 0 0 1.4rem;
+	color: #d1c6af;
+	font-size: 0.72rem;
+	text-align: center;
+}
+.project-preview__workflow ol {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.65rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: pipeline;
+}
+.project-preview__workflow li {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	min-height: 3.5rem;
+	padding: 0.75rem;
+	border: 1px solid #606b59;
+	border-radius: 3px;
+	background: #252c26;
+	font-size: 0.75rem;
+	line-height: 1.5;
+	counter-increment: pipeline;
+}
+.project-preview__workflow li::before {
+	color: #b3be9e;
+	font: 0.6rem var(--mono);
+	content: counter(pipeline, decimal-leading-zero);
+}
+.case-opening {
+	margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.case-opening .project-preview {
+	aspect-ratio: 2;
+	padding: clamp(1.5rem, 5vw, 4rem);
+}
+.case-opening .project-preview[data-project='sidequest'] img {
+	left: 26%;
+	width: 22%;
+}
+.case-opening .project-preview[data-project='sidequest'] .project-preview__secondary {
+	left: 53%;
+}
+.case-opening .project-preview__secondary {
+	width: 43%;
+	right: 4%;
+	bottom: -5%;
+}
+.case-opening .project-preview[data-project='rocky'] .project-preview__primary,
+.case-opening .project-preview[data-project='notes-app'] .project-preview__primary,
+.case-opening .project-preview[data-project='workout-journal'] .project-preview__primary {
+	width: 78%;
+	left: 5%;
+	top: 10%;
+}
+.case-opening .project-preview__terminal {
+	max-width: 47rem;
+}
+.case-opening .project-preview__terminal pre {
+	font-size: 0.8rem;
+}
+.case-opening .project-preview__workflow {
+	max-width: 48rem;
+}
+.case-opening .project-preview__workflow ol {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.case-index {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1.4rem;
+	padding: 1.5rem 0;
+	margin-top: 1rem;
+	border-bottom: 1px solid var(--line);
+}
+.case-index a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.4rem;
+	color: var(--ink-muted);
+	font-size: 0.75rem;
+	text-decoration: none;
+	text-underline-offset: 5px;
+}
+.case-index a:hover,
+.case-index a:focus-visible {
+	color: var(--rust);
+	text-decoration: underline;
+}
+.project-reading section[id],
+.project-reading h2[id] {
+	scroll-margin-top: 2rem;
+}
+@media (max-width: 700px) {
+	.case-opening .project-preview {
+		aspect-ratio: 1.5;
+		padding: 1.2rem;
+	}
+	.case-opening .project-preview[data-project='sidequest'] img {
+		left: 14%;
+		width: 34%;
+	}
+	.case-opening .project-preview__secondary {
+		width: 58%;
+		right: -5%;
+	}
+	.case-opening .project-preview__workflow ol {
+		grid-template-columns: 1fr 1fr;
+	}
+	.case-opening .project-preview[data-project='onetask-cli'],
+	.case-opening .project-preview[data-project='towtruck-alert'] {
+		aspect-ratio: auto;
+	}
+	.case-opening .project-preview__terminal pre {
+		font-size: 0.62rem;
+	}
+	.project-preview__workflow li {
+		min-height: 2.7rem;
+		font-size: 0.65rem;
+	}
+	.case-index {
+		gap: 0.1rem 1rem;
+	}
+}

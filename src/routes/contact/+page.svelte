@@ -17,17 +17,14 @@
 		content="summary"
 	/></svelte:head
 >
-<main class="content-page">
+<main class="content-page contact-page">
 	<header class="content-page__intro">
-		<p class="eyebrow">Contact</p>
 		<h1>Say hello.</h1>
 		<p class="content-page__lede">
-			I’m interested in software engineering opportunities, collaborative projects, and
-			conversations about building useful software.
+			I’m looking for software engineering opportunities and people to build projects with.
 		</p>
 	</header>
-	<div class="content-grid">
-		<p class="eyebrow">Elsewhere</p>
+	<div class="content-grid content-grid--prose">
 		<div>
 			<div class="contact-links">
 				<a href="https://github.com/chrisvuletich" target="_blank" rel="noreferrer"
@@ -35,8 +32,7 @@
 				>
 			</div>
 			<p class="contact-note">
-				A direct email address is not published here yet. GitHub is the best place to see my current
-				work and get in touch.
+				I haven’t added my email here yet. For now, you can find me on GitHub.
 			</p>
 		</div>
 	</div>

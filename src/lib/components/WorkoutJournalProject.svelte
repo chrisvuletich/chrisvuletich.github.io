@@ -1,5 +1,8 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script lang="ts">
+	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
+	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
+	import { projectSections } from '$lib/data/project-sections';
 	import { base, resolve } from '$app/paths';
 	const githubUrl = 'https://github.com/chrisvuletich/workout-log';
 
@@ -60,12 +63,13 @@
 			</div>
 		</dl>
 	</header>
+	<div class="case-opening"><ProjectPreview slug="workout-journal" /></div>
+	<CaseStudyIndex sections={projectSections['workout-journal']} />
 
 	<div class="workout-journal__content">
 		<div class="workout-journal__main">
 			<section class="workout-journal__section" aria-labelledby="overview-title">
-				<p class="eyebrow">01 / Overview</p>
-				<h2 id="overview-title">A training log designed around my own routine.</h2>
+				<h2 id="overview-title">Overview</h2>
 				<div class="workout-journal__prose">
 					<p>
 						Workout Journal is built for my own use, not as a product for other people. It gives me
@@ -80,8 +84,7 @@
 			</section>
 
 			<section class="workout-journal__section" aria-labelledby="why-title">
-				<p class="eyebrow">02 / Why I built it</p>
-				<h2 id="why-title">Notes worked—until they became the archive.</h2>
+				<h2 id="why-title">Why I built it</h2>
 				<div class="workout-journal__prose">
 					<p>
 						I tracked every workout in Apple Notes for several years. It was a simple system that
@@ -97,16 +100,14 @@
 			</section>
 
 			<section class="workout-journal__section" aria-labelledby="features-title">
-				<p class="eyebrow">03 / Features</p>
-				<h2 id="features-title">A familiar routine, with better recall.</h2>
+				<h2 id="features-title">Features</h2>
 				<div class="workout-journal__feature-grid">
 					{#each features as feature (feature)}<article><h3>{feature}</h3></article>{/each}
 				</div>
 			</section>
 
 			<section class="workout-journal__section" aria-labelledby="technical-title">
-				<p class="eyebrow">04 / Technical highlights</p>
-				<h2 id="technical-title">Personal software with real application boundaries.</h2>
+				<h2 id="technical-title">Technical highlights</h2>
 				<div class="workout-journal__prose">
 					<p>
 						The application is built with SvelteKit and TypeScript, using Supabase for PostgreSQL
@@ -118,8 +119,7 @@
 			</section>
 
 			<section class="workout-journal__section" aria-labelledby="learning-title">
-				<p class="eyebrow">05 / What I learned</p>
-				<h2 id="learning-title">Using the application is part of building it.</h2>
+				<h2 id="learning-title">What I learned</h2>
 				<div class="workout-journal__prose">
 					<p>
 						Building Workout Journal gave me practical experience designing relational data, working
@@ -136,8 +136,7 @@
 			</section>
 
 			<section class="workout-journal__section" aria-labelledby="development-title">
-				<p class="eyebrow">06 / Current development</p>
-				<h2 id="development-title">An active tool that keeps improving with use.</h2>
+				<h2 id="development-title">Current development</h2>
 				<div class="workout-journal__prose">
 					<p>
 						Workout Journal is actively used and continues to evolve as I notice opportunities to
@@ -148,8 +147,7 @@
 			</section>
 
 			<section class="workout-journal__section" aria-labelledby="screenshots-title">
-				<p class="eyebrow">07 / Screenshots</p>
-				<h2 id="screenshots-title">A closer look at the everyday workflow.</h2>
+				<h2 id="screenshots-title">Screenshots</h2>
 				<div class="workout-journal__screenshots">
 					{#each screenshots as screenshot (screenshot.file)}
 						<article>

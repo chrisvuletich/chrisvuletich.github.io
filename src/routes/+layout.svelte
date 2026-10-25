@@ -9,9 +9,12 @@
 
 <svelte:head>
 	<link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
-	<meta name="theme-color" content="#f4eee3" />
+	<meta name="theme-color" content="#181917" />
 </svelte:head>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
 <SiteNav />
-{@render children()}
+<div id="main-content" tabindex="-1">
+	{@render children()}
+</div>
 <SiteFooter />

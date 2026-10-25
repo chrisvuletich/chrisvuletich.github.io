@@ -70,7 +70,7 @@
 		name="description"
 		content="SideQuest helps you break up a stale day by giving you a simple activity based on what you feel like doing."
 	/>
-	<meta name="theme-color" content="#29241e" />
+	<meta name="theme-color" content="#1c1d18" />
 	<link rel="canonical" href="https://vuletich.dev/sidequest" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
@@ -105,14 +105,9 @@
 	<main class="sidequest-launch" id="top">
 		<section class="sidequest-launch__hero">
 			<div class="sidequest-launch__hero-copy">
-				<p class="sidequest-launch__margin-note">A little nudge out the door</p>
 				<div class="sidequest-launch__welcome-copy">
-					<p class="sidequest-launch__eyebrow">One good idea</p>
 					<h1>Not sure what to do today?</h1>
-					<p>
-						Pick the kind of day you want and SideQuest will give you something to do—without an
-						endless list to scroll through.
-					</p>
+					<p>Get a suggestion, or browse ideas based on your mood and how much time you have.</p>
 				</div>
 				<div class="sidequest-launch__actions">
 					<a
@@ -145,9 +140,8 @@
 
 		<section class="sidequest-launch__section" id="how-it-works">
 			<div class="sidequest-launch__section-heading">
-				<p class="sidequest-launch__eyebrow">How it works</p>
-				<h2>One small decision, then go.</h2>
-				<p>Start immediately or narrow the suggestion to fit the moment.</p>
+				<h2>How it works</h2>
+				<p>Get a random suggestion or choose a few filters.</p>
 			</div>
 			<ol class="sidequest-launch__steps">
 				<li>
@@ -170,22 +164,20 @@
 
 		<section class="sidequest-launch__section sidequest-launch__why" id="why-sidequest">
 			<div>
-				<p class="sidequest-launch__eyebrow">Why I built it</p>
-				<h2>I wanted to do something. I just did not know what.</h2>
+				<h2>Why I built it</h2>
 			</div>
 			<div class="sidequest-launch__why-card">
 				<p>
 					I wanted to get out of my apartment or make a stale day more interesting, but often had no
 					idea what to do.
 				</p>
-				<p>SideQuest became my own creative solution to that problem.</p>
+				<p>I built SideQuest to help me find something to do on those days.</p>
 			</div>
 		</section>
 
 		<section class="sidequest-launch__section" id="examples" aria-labelledby="examples-title">
 			<div class="sidequest-launch__section-heading">
-				<p class="sidequest-launch__eyebrow">A few SideQuests</p>
-				<h2 id="examples-title">Small ideas for a less ordinary day.</h2>
+				<h2 id="examples-title">Activity ideas</h2>
 				<p>These are real activities from the SideQuest catalog.</p>
 			</div>
 			<div class="sidequest-launch__examples">
@@ -216,8 +208,7 @@
 			aria-labelledby="filters-title"
 		>
 			<div class="sidequest-launch__filters-copy">
-				<p class="sidequest-launch__eyebrow">Narrow it down</p>
-				<h2 id="filters-title">What kind of day are you having?</h2>
+				<h2 id="filters-title">Filter your options</h2>
 				<p>
 					Keep it spontaneous, or use SideQuest’s real filters to find an activity that fits the
 					time and energy you have.
@@ -241,8 +232,7 @@
 
 		<section class="sidequest-launch__section" aria-labelledby="preview-title">
 			<div class="sidequest-launch__section-heading sidequest-launch__section-heading--centered">
-				<p class="sidequest-launch__eyebrow">Product preview</p>
-				<h2 id="preview-title">See SideQuest in action.</h2>
+				<h2 id="preview-title">Screenshots</h2>
 				<p>A mobile-first flow for discovering, refining, and saving an idea.</p>
 			</div>
 			<div class="sidequest-launch__preview">

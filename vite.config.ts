@@ -3,6 +3,9 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	// Keep development and built previews on separate, predictable origins.
+	server: { host: '127.0.0.1', port: 5174, strictPort: true },
+	preview: { host: '127.0.0.1', port: 4173, strictPort: true },
 	plugins: [
 		sveltekit({
 			compilerOptions: {

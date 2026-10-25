@@ -15,9 +15,8 @@
 
 <main class="page apps-page">
 	<header class="page-intro apps-page__intro">
-		<p class="eyebrow">Things to use / explore</p>
 		<h1>Apps</h1>
-		<p>Things I’ve built to use, experiment with, or simply because I wanted them to exist.</p>
+		<p>Apps and tools I’ve built. Some are public, and others are personal projects.</p>
 	</header>
 	<section class="apps-directory" aria-label="Apps, tools, and interactive projects">
 		{#each apps as app (app.slug)}

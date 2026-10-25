@@ -220,7 +220,7 @@
 	border-top: 1px solid var(--line);
 	border-bottom: 1px solid var(--line);
 }
-.library-filters summary {
+.library-filters > summary {
 	cursor: pointer;
 	padding: 0.9rem 0;
 	color: var(--rust);
@@ -229,14 +229,14 @@
 	text-transform: uppercase;
 	list-style: none;
 }
-.library-filters summary::-webkit-details-marker {
+.library-filters > summary::-webkit-details-marker {
 	display: none;
 }
-.library-filters summary::after {
+.library-filters > summary::after {
 	margin-left: 0.5rem;
 	content: '+';
 }
-.library-filters[open] summary::after {
+.library-filters[open] > summary::after {
 	content: '−';
 }
 .library-filters .book-controls {

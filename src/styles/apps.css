@@ -21,9 +21,8 @@
 	min-height: 22rem;
 	padding: clamp(1.35rem, 3vw, 2rem);
 	border: 1px solid var(--line-strong);
-	background:
-		linear-gradient(135deg, color-mix(in srgb, var(--app-accent) 8%, transparent), transparent 48%),
-		rgba(255, 253, 247, 0.5);
+	border-radius: var(--radius);
+	background: var(--surface);
 	transition:
 		transform var(--transition),
 		border-color var(--transition),
@@ -35,7 +34,7 @@
 }
 
 .app-card[data-tone='ochre'] {
-	--app-accent: #a47435;
+	--app-accent: #ceb07c;
 }
 
 .app-card[data-tone='ink'] {
@@ -43,19 +42,12 @@
 }
 
 .app-card[data-tone='water'] {
-	--app-accent: #4f7080;
+	--app-accent: #a1bbc3;
 }
 
 .app-card:hover {
 	border-color: var(--app-accent);
-	background:
-		linear-gradient(
-			135deg,
-			color-mix(in srgb, var(--app-accent) 12%, transparent),
-			transparent 48%
-		),
-		var(--paper-deep);
-	transform: translateY(-2px);
+	background: var(--paper-deep);
 }
 
 .app-card__topline {
@@ -72,6 +64,7 @@
 	height: 3.15rem;
 	flex: none;
 	border: 1px solid color-mix(in srgb, var(--app-accent) 72%, var(--line));
+	border-radius: var(--radius);
 	color: var(--app-accent);
 	background: color-mix(in srgb, var(--app-accent) 9%, var(--paper));
 	font: 600 0.9rem var(--mono);

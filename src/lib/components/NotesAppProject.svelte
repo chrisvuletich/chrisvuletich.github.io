@@ -1,4 +1,7 @@
 <script lang="ts">
+	import ProjectPreview from '$lib/components/ProjectPreview.svelte';
+	import CaseStudyIndex from '$lib/components/CaseStudyIndex.svelte';
+	import { projectSections } from '$lib/data/project-sections';
 	import { base, resolve } from '$app/paths';
 
 	const featureGroups = [
@@ -101,12 +104,13 @@
 			</div>
 		</dl>
 	</header>
+	<div class="case-opening"><ProjectPreview slug="notes-app" /></div>
+	<CaseStudyIndex sections={projectSections['notes-app']} />
 
 	<div class="notes-project__layout">
 		<div class="notes-project__main">
 			<section class="notes-project__section" aria-labelledby="notes-overview">
-				<p class="eyebrow">01 / Overview</p>
-				<h2 id="notes-overview">The place where I keep my schoolwork together.</h2>
+				<h2 id="notes-overview">Overview</h2>
 				<div class="notes-project__prose">
 					<p>
 						Notes App is a private web app I built for my own academic workflow. It brings my course
@@ -121,8 +125,7 @@
 			</section>
 
 			<section class="notes-project__section" aria-labelledby="notes-why">
-				<p class="eyebrow">02 / Why I built it</p>
-				<h2 id="notes-why">I wanted one place that worked the way I do.</h2>
+				<h2 id="notes-why">Why I built it</h2>
 				<div class="notes-project__prose">
 					<p>
 						My notes, assignments, course information, scanned pages, and reminders were spread
@@ -138,8 +141,7 @@
 			</section>
 
 			<section class="notes-project__section" aria-labelledby="notes-features">
-				<p class="eyebrow">03 / Current features</p>
-				<h2 id="notes-features">What I can do in the app today.</h2>
+				<h2 id="notes-features">Current features</h2>
 				<div class="notes-project__feature-grid">
 					{#each featureGroups as feature (feature.title)}
 						<article>
@@ -152,8 +154,7 @@
 			</section>
 
 			<section class="notes-project__section" aria-labelledby="notes-editor">
-				<p class="eyebrow">04 / Editor and data design</p>
-				<h2 id="notes-editor">How the editor balances structure and natural writing.</h2>
+				<h2 id="notes-editor">Editor and data design</h2>
 				<div class="notes-project__prose">
 					<p>
 						The editor is designed to feel like one continuous document rather than a stack of
@@ -177,8 +178,7 @@
 			</section>
 
 			<section class="notes-project__section" aria-labelledby="notes-privacy">
-				<p class="eyebrow">05 / Privacy and access</p>
-				<h2 id="notes-privacy">How I keep my notes and files private.</h2>
+				<h2 id="notes-privacy">Privacy and access</h2>
 				<div class="notes-project__prose">
 					<p>
 						There is no public registration. I control which accounts are created, and users must
@@ -194,8 +194,7 @@
 			</section>
 
 			<section class="notes-project__section" aria-labelledby="notes-technical">
-				<p class="eyebrow">06 / Technical foundation</p>
-				<h2 id="notes-technical">What runs behind the app.</h2>
+				<h2 id="notes-technical">Technical foundation</h2>
 				<div class="notes-project__architecture" aria-label="Notes App architecture">
 					<div>
 						<span>Frontend</span>
@@ -226,8 +225,7 @@
 			</section>
 
 			<section class="notes-project__section" aria-labelledby="notes-learning">
-				<p class="eyebrow">07 / What I learned</p>
-				<h2 id="notes-learning">Using it for school shows me what to improve.</h2>
+				<h2 id="notes-learning">What I learned</h2>
 				<div class="notes-project__prose">
 					<p>
 						Building Notes App has helped me understand how authentication, relational database
@@ -244,8 +242,7 @@
 			</section>
 
 			<section class="notes-project__section" aria-labelledby="notes-screenshots">
-				<p class="eyebrow">08 / Screenshots</p>
-				<h2 id="notes-screenshots">What the app looks like in use.</h2>
+				<h2 id="notes-screenshots">Screenshots</h2>
 				<div class="notes-project__screenshots">
 					{#each screenshots as screenshot (screenshot.title)}
 						<article>
@@ -269,8 +266,7 @@
 				class="notes-project__section notes-project__section--last"
 				aria-labelledby="notes-status"
 			>
-				<p class="eyebrow">09 / Current status</p>
-				<h2 id="notes-status">Still changing as I use it.</h2>
+				<h2 id="notes-status">Current status</h2>
 				<div class="notes-project__prose">
 					<p>
 						Notes App is an active, private project. I keep using it for school, noticing what gets
