@@ -182,18 +182,13 @@
 	object-position: 50% 60%;
 }
 .about-page .content-grid {
-	--ink: #302f27;
-	--ink-muted: #615e51;
-	--rust: #795e3f;
-	--line: #d0c8b8;
-	--line-strong: #a9a28f;
 	max-width: none;
 	margin-top: clamp(3rem, 6vw, 5rem);
 	padding: clamp(1.5rem, 5vw, 4rem);
 	border: 0;
 	border-radius: var(--radius);
 	color: var(--ink);
-	background: #e9e3d7;
+	background: var(--surface);
 }
 .about-page .content-section {
 	display: grid;

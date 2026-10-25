@@ -1,18 +1,18 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { base, resolve } from '$app/paths';
 	const canonical = 'https://vuletich.dev/about';
 </script>
 
 <svelte:head
 	><title>About | Christopher Vuletich</title><meta
 		name="description"
-		content="About Christopher Vuletich, a Kent State computer science student focused on useful software and thoughtful interfaces."
+		content="About Christopher Vuletich, a senior computer science student at Kent State University interested in software engineering, AI, and computer vision."
 	/><link rel="canonical" href={canonical} /><meta
 		property="og:title"
 		content="About | Christopher Vuletich"
 	/><meta
 		property="og:description"
-		content="A computer science student focused on useful software and thoughtful interfaces."
+		content="A senior computer science student at Kent State University interested in software engineering, AI, and computer vision."
 	/><meta property="og:url" content={canonical} /><meta
 		name="twitter:card"
 		content="summary"
@@ -23,8 +23,7 @@
 		<div class="about-page__introduction">
 			<h1>About me</h1>
 			<p class="content-page__lede">
-				I’m Christopher Vuletich. I study computer science at Kent State University and want to work
-				as a software engineer.
+				I’m Christopher Vuletich, a senior computer science student at Kent State University.
 			</p>
 		</div>
 		<figure class="about-page__photo">
@@ -44,31 +43,46 @@
 			<section class="content-section">
 				<h2>Introduction</h2>
 				<p>
-					I’m a computer science student at Kent State University with an interest in software
-					engineering, artificial intelligence, and computer vision. I enjoy taking ideas and
-					turning them into software I can actually use.
+					I’m interested in software engineering, AI, and computer vision, and I like exploring
+					other areas of computer science too. What I enjoy most is solving problems and building
+					software that’s useful to other people.
 				</p>
 				<p>
-					I first got interested in programming through games, Scratch projects, and a website I
-					built when I was younger. Since then, I’ve enjoyed exploring different areas of computer
-					science and finding ways to build things that solve real problems.
+					I first got into programming through games, Scratch projects, and a website I built when I
+					was younger.
+				</p>
+			</section>
+			<section class="content-section">
+				<h2>At Kent State</h2>
+				<p>
+					I’m currently a teaching assistant and grader for Structures of Programming Languages.
+				</p>
+				<p>
+					I’m also pursuing admission to Kent State’s combined bachelor’s/master’s program in
+					computer science.
 				</p>
 			</section>
 			<section class="content-section">
 				<h2>How I work</h2>
 				<p>
-					I like learning by building things. Most of my projects start with something I’m curious
-					about or a problem I want to solve. I enjoy experimenting, figuring out how things work,
-					and improving what I’ve built as I learn more.
+					I like learning by building and experimenting. Most of my projects start with a problem I
+					want to solve, an idea I want to try, or something I’m curious about.
+				</p>
+				<p>
+					I enjoy figuring out how things work and going back to improve what I’ve built as I learn
+					more.
 				</p>
 			</section>
 			<section class="content-section">
 				<h2>What I’m exploring</h2>
 				<p>
-					Recently, I’ve been spending more time with Python, OpenCV, and computer vision. I’m
-					especially interested in how software can understand and interact with the physical world.
-					I also enjoy full-stack development, building personal tools, and experimenting with new
-					technologies.
+					Lately, I’ve been experimenting with Python and OpenCV. I’m especially interested in
+					computer vision and how AI can help software understand and interact with the physical
+					world.
+				</p>
+				<p>
+					I also enjoy working on full-stack applications, databases, and practical tools for
+					everyday problems.
 				</p>
 			</section>
 			<section class="content-section">
@@ -78,7 +92,6 @@
 						<h3>Languages</h3>
 						<ul>
 							<li>Python</li>
-							<li>C++</li>
 							<li>TypeScript</li>
 							<li>JavaScript</li>
 							<li>HTML</li>
@@ -89,8 +102,11 @@
 						<h3>Frameworks and tools</h3>
 						<ul>
 							<li>SvelteKit</li>
+							<li>React</li>
 							<li>Flask</li>
 							<li>OpenCV</li>
+							<li>Supabase</li>
+							<li>PostgreSQL</li>
 							<li>Git</li>
 							<li>GitHub</li>
 							<li>Vite</li>
@@ -101,9 +117,13 @@
 			<section class="content-section">
 				<h2>Outside of programming</h2>
 				<p>
-					Outside of computer science, I enjoy hiking, photography, drawing, reading, and spending
-					time outdoors. I like having hobbies that get me away from a screen and give me something
-					different to explore.
+					Outside of programming, I enjoy hiking, exploring the outdoors, photography, drawing, and
+					reading.
+				</p>
+				<p>
+					If you’re curious about what I’m reading, take a look at <a href={resolve('/bookshelf')}
+						>my bookshelf</a
+					>.
 				</p>
 			</section>
 		</div>
