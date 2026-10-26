@@ -65,12 +65,12 @@
 	<section class="hero" aria-labelledby="hero-title">
 		<img
 			class="hero__landscape"
-			src={`${base}/images/landscape/mountains-1920.webp`}
-			srcset={`${base}/images/landscape/mountains-960.webp 960w, ${base}/images/landscape/mountains-1920.webp 1920w`}
+			src={`${base}/images/landscape/forest-mist-1920.webp`}
+			srcset={`${base}/images/landscape/forest-mist-960.webp 960w, ${base}/images/landscape/forest-mist-1920.webp 1920w`}
 			sizes="100vw"
 			width="1920"
-			height="1440"
-			alt="Clouds parting over snow-covered mountains and autumn forests in the Swiss Alps"
+			height="1280"
+			alt="Fog drifting through a forested valley in Tennessee"
 			fetchpriority="high"
 		/>
 		<div class="hero__inner">
