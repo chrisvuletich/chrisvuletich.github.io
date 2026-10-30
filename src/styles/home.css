@@ -12,7 +12,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: 50% 55%;
+	object-position: 50% 65%;
 }
 .hero::before {
 	position: absolute;
@@ -20,8 +20,14 @@
 	inset: 0;
 	/* Photography overlays preserve contrast in every responsive crop. */
 	background:
-		linear-gradient(90deg, #121912d1 0%, #141b1473 45%, #151a1210 100%),
-		linear-gradient(0deg, #181917c4 0%, transparent 50%);
+		linear-gradient(
+			90deg,
+			#141916d9 0%,
+			#141916c7 calc((100% - var(--container)) / 2 + 26rem),
+			#14191673 calc((100% - var(--container)) / 2 + 46rem),
+			#14191600 100%
+		),
+		linear-gradient(0deg, #181917cc 0%, transparent 35%);
 	content: '';
 }
 .hero__inner {
@@ -70,6 +76,25 @@
 .hero__links a {
 	color: #dedbce;
 	text-underline-offset: 4px;
+}
+.hero__credit {
+	position: absolute;
+	right: max(1.25rem, calc((100% - var(--container)) / 2));
+	bottom: 0.75rem;
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	max-width: calc(100% - 2.5rem);
+	padding: 0.35rem 0.2rem;
+	color: #dedbce;
+	font-size: 0.75rem;
+	line-height: 1.5;
+	text-decoration-color: #dedbce99;
+	text-underline-offset: 4px;
+}
+.hero__credit:hover {
+	color: var(--ink);
+	text-decoration-color: currentColor;
 }
 .site-guide {
 	display: grid;
@@ -412,11 +437,11 @@
 	}
 	.hero::before {
 		background:
-			linear-gradient(90deg, #11180ee8, #11180e70),
-			linear-gradient(0deg, #141712d9, transparent 50%);
+			linear-gradient(90deg, #141916e0, #14191699),
+			linear-gradient(0deg, #181917cc, transparent 40%);
 	}
 	.hero__landscape {
-		object-position: 20% 50%;
+		object-position: 72% 50%;
 	}
 	.site-guide {
 		gap: 1.8rem;

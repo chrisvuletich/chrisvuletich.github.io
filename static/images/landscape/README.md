@@ -1,6 +1,20 @@
 # Homepage landscape photographs
 
-## Current homepage: misty forest
+## Current homepage: Christopher’s wallpaper
+
+Original file: `pexels-alexmoliski-28997704.jpg`, supplied by Christopher on October 30, 2026.
+Photographer: Alex Moliski, identified from the supplied filename.
+Profile: https://www.pexels.com/@alexmoliski/
+The on-image credit links to this profile.
+Source: Pexels photo 28997704 (as identified in the supplied filename).
+License reference: https://www.pexels.com/license/
+
+Locally hosted WebP versions at 960, 1920, and 2560 pixels wide.
+Only orientation normalization, resizing, and compression are applied to the supplied photograph.
+Responsive framing and text-contrast overlays are applied in CSS.
+The original wallpaper and all previous landscape assets are left unchanged.
+
+## Previous homepage: misty forest (retained)
 
 Photo: Brice Cooper, “A lone tree amongst the dense fog.”
 Location: Smoky Mountain, Tennessee, USA.

@@ -65,12 +65,12 @@
 	<section class="hero" aria-labelledby="hero-title">
 		<img
 			class="hero__landscape"
-			src={`${base}/images/landscape/forest-mist-1920.webp`}
-			srcset={`${base}/images/landscape/forest-mist-960.webp 960w, ${base}/images/landscape/forest-mist-1920.webp 1920w`}
+			src={`${base}/images/landscape/mountain-valley-1920.webp`}
+			srcset={`${base}/images/landscape/mountain-valley-960.webp 960w, ${base}/images/landscape/mountain-valley-1920.webp 1920w, ${base}/images/landscape/mountain-valley-2560.webp 2560w`}
 			sizes="100vw"
 			width="1920"
 			height="1280"
-			alt="Fog drifting through a forested valley in Tennessee"
+			alt="Warm clouds over a rocky mountain valley and evergreen trees"
 			fetchpriority="high"
 		/>
 		<div class="hero__inner">
@@ -94,6 +94,15 @@
 				</div>
 			</div>
 		</div>
+		<a
+			class="hero__credit"
+			href="https://www.pexels.com/@alexmoliski/"
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Photo: Alex Moliski / Pexels (opens in a new tab)"
+		>
+			Photo: Alex Moliski / Pexels
+		</a>
 	</section>
 
 	<section class="site-guide" aria-labelledby="site-guide-title">
