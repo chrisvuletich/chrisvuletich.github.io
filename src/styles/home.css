@@ -259,12 +259,6 @@
 	top: 22%;
 	left: 54%;
 }
-.featured-project[data-project='workout-journal'] .featured-project__image {
-	background: #343b36;
-}
-.featured-project[data-project='workout-journal'] .featured-project__image img {
-	padding: 1.8rem;
-}
 .featured-project[data-project='password-manager'] .featured-project__image {
 	background: #302d28;
 }

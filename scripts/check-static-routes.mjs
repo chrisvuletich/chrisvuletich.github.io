@@ -14,7 +14,6 @@ const routes = new Map([
 	['/sidequest', 'Not sure what to do today?'],
 	['/projects/sidequest', 'SideQuest'],
 	['/projects/password-manager', 'Password Manager'],
-	['/projects/workout-journal', 'Workout Journal'],
 	['/projects/notes-app', 'Notes App'],
 	['/projects/rocky', 'Rocky'],
 	['/projects/towtruck-alert', 'TowTruck Alert'],

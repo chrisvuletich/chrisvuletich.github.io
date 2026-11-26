@@ -75,36 +75,6 @@ export const projectSections = {
 			title: 'Project details'
 		}
 	],
-	'workout-journal': [
-		{
-			id: 'overview-title',
-			title: 'Overview'
-		},
-		{
-			id: 'why-title',
-			title: 'Why I built it'
-		},
-		{
-			id: 'features-title',
-			title: 'Features'
-		},
-		{
-			id: 'technical-title',
-			title: 'Technical highlights'
-		},
-		{
-			id: 'learning-title',
-			title: 'What I learned'
-		},
-		{
-			id: 'development-title',
-			title: 'Current development'
-		},
-		{
-			id: 'screenshots-title',
-			title: 'Screenshots'
-		}
-	],
 	'password-manager': [
 		{
 			id: 'overview-title',

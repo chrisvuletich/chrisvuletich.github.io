@@ -7,7 +7,6 @@
 	import RockyProject from '$lib/components/RockyProject.svelte';
 	import SideQuestProject from '$lib/components/SideQuestProject.svelte';
 	import TowTruckCaseStudy from '$lib/components/TowTruckCaseStudy.svelte';
-	import WorkoutJournalProject from '$lib/components/WorkoutJournalProject.svelte';
 	import type { PageData } from './$types';
 	let { data }: { data: PageData } = $props();
 	const project = $derived(data.project);
@@ -35,8 +34,6 @@
 		<OneTaskCaseStudy />
 	{:else if project.slug === 'towtruck-alert'}
 		<TowTruckCaseStudy />
-	{:else if project.slug === 'workout-journal'}
-		<WorkoutJournalProject />
 	{:else if project.slug === 'notes-app'}
 		<NotesAppProject />
 	{:else}
