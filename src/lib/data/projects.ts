@@ -3,19 +3,11 @@ export type ProjectStatus =
 	| 'V1 Complete'
 	| 'Completed'
 	| 'v0.2 In Progress'
-	| 'Active Personal Project'
 	| 'Active Development'
 	| 'Active / In Development';
 
 export type Project = {
-	slug:
-		| 'rocky'
-		| 'towtruck-alert'
-		| 'onetask-cli'
-		| 'workout-journal'
-		| 'notes-app'
-		| 'password-manager'
-		| 'sidequest';
+	slug: 'rocky' | 'towtruck-alert' | 'onetask-cli' | 'notes-app' | 'password-manager' | 'sidequest';
 	title: string;
 	status: ProjectStatus;
 	category: string;
@@ -76,28 +68,6 @@ export const projects: Project[] = [
 		],
 		technologies: ['Python', 'Cryptography', 'Fernet', 'Scrypt', 'CLI', 'Unit Testing'],
 		githubUrl: 'https://github.com/chrisvuletich/password-manager'
-	},
-	{
-		slug: 'workout-journal',
-		title: 'Workout Journal',
-		status: 'Active Personal Project',
-		category: 'Personal Fitness Application',
-		description: 'Private workout tracking application built for personal use.',
-		overview:
-			'A private web application built to replace years of Apple Notes workout tracking with a system designed around my own training.',
-		motivation:
-			'Years of workout notes became difficult to search, compare, organize, and reuse across devices, so I built a system that fits how I train.',
-		contribution:
-			'An independent full-stack project built for daily personal use, from workout logging and templates to cloud-synced history and account security.',
-		role: 'Designer and developer',
-		dateRange: 'Started 2026 · actively evolving',
-		milestones: [
-			'Created a personal workout log that preserves the structure of my existing training routine.',
-			'Added cloud-synced history, custom exercises, templates, and progress tracking.',
-			'Continues to improve through real-world use during workouts.'
-		],
-		technologies: ['SvelteKit', 'TypeScript', 'Supabase', 'PostgreSQL', 'Supabase Auth', 'Vercel'],
-		githubUrl: 'https://github.com/chrisvuletich/workout-log'
 	},
 	{
 		slug: 'notes-app',

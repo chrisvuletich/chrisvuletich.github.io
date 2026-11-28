@@ -23,12 +23,6 @@ export const projectPreviews: Partial<
 		image: 'password-manager/cli.png',
 		alt: 'Password Manager command-line interface'
 	},
-	'workout-journal': {
-		image: 'workout-log/history.webp',
-		alt: 'Workout Journal training history',
-		secondary: 'workout-log/calendar.webp',
-		secondaryAlt: 'Workout Journal calendar'
-	},
 	'notes-app': {
 		image: 'notes/academic.png',
 		alt: 'Notes App academic workspace',

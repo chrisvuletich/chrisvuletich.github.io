@@ -21,14 +21,6 @@
 			fit: 'contain'
 		},
 		{
-			slug: 'workout-journal',
-			image: '/images/project/workout-log/history.webp',
-			alt: 'Workout Journal history screen showing previous training sessions',
-			secondary: null,
-			secondaryAlt: '',
-			fit: 'contain'
-		},
-		{
 			slug: 'password-manager',
 			image: '/images/project/password-manager/cli.png',
 			alt: 'Password Manager command-line interface showing available vault commands',
@@ -192,8 +184,8 @@
 	<section class="about-preview" aria-labelledby="about-preview-title">
 		<h2 id="about-preview-title">About me</h2>
 		<p>
-			Most of my projects start with something I want to use myself, from keeping track of workouts
-			to organizing my schoolwork. Outside of coding, I enjoy art and photography.
+			Most of my projects start with something I want to use myself, like organizing my schoolwork.
+			Outside of coding, I enjoy art and photography.
 		</p>
 		<a class="text-link" href={resolve('/about')}>More About Me <span aria-hidden="true">→</span></a
 		>

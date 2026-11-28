@@ -52,8 +52,7 @@
 	bottom: auto;
 }
 .project-preview[data-project='rocky'] .project-preview__primary,
-.project-preview[data-project='notes-app'] .project-preview__primary,
-.project-preview[data-project='workout-journal'] .project-preview__primary {
+.project-preview[data-project='notes-app'] .project-preview__primary {
 	position: absolute;
 	top: 12%;
 	left: 6%;
@@ -158,8 +157,7 @@
 	bottom: -5%;
 }
 .case-opening .project-preview[data-project='rocky'] .project-preview__primary,
-.case-opening .project-preview[data-project='notes-app'] .project-preview__primary,
-.case-opening .project-preview[data-project='workout-journal'] .project-preview__primary {
+.case-opening .project-preview[data-project='notes-app'] .project-preview__primary {
 	width: 78%;
 	left: 5%;
 	top: 10%;

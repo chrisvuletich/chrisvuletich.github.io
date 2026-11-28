@@ -53,13 +53,7 @@
 	column-gap: clamp(2rem, 7vw, 7rem);
 }
 .project-reading
-	:is(
-		.case-prose,
-		.sidequest-project__prose,
-		.password-manager__prose,
-		.notes-project__prose,
-		.workout-journal__prose
-	) {
+	:is(.case-prose, .sidequest-project__prose, .password-manager__prose, .notes-project__prose) {
 	max-width: 42rem;
 }
 .project-reading
@@ -67,7 +61,6 @@
 		.contribution-grid article,
 		.feature-grid article,
 		.sidequest-project__card-grid article,
-		.workout-journal__feature-grid article,
 		.notes-project__feature-grid article,
 		.password-manager__feature-grid article
 	) {
@@ -83,20 +76,13 @@
 		.sidequest-project__screenshot-frame,
 		.password-manager__screenshot-frame,
 		.notes-project__screenshot-frame,
-		.workout-journal__screenshots img,
 		.architecture,
 		.password-manager__architecture,
 		.towtruck-pipeline
 	) {
 	border-radius: var(--radius);
 }
-.project-reading
-	:is(
-		.notes-project__sidebar,
-		.workout-journal__sidebar,
-		.sidequest-project__info,
-		.password-manager__info
-	) {
+.project-reading :is(.notes-project__sidebar, .sidequest-project__info, .password-manager__info) {
 	border-color: var(--line);
 	border-radius: var(--radius);
 	background: var(--paper-deep);

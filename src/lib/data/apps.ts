@@ -1,8 +1,7 @@
 import type { Project } from './projects';
 
 export type AppEntry = {
-	slug:
-		'workout-journal' | 'notes-app' | 'sidequest' | 'bookshelf' | 'cozy-commands' | 'bar-fishing';
+	slug: 'notes-app' | 'sidequest' | 'bookshelf' | 'cozy-commands' | 'bar-fishing';
 	name: string;
 	type: 'Web App' | 'Personal Tool' | 'Reading App' | 'Game Mod';
 	description: string;
@@ -17,20 +16,6 @@ export type AppEntry = {
 };
 
 export const apps: AppEntry[] = [
-	{
-		slug: 'workout-journal',
-		name: 'Workout Journal',
-		type: 'Personal Tool',
-		description:
-			'A private workout tracker I built to replace the way I used to log workouts in my notes.',
-		status: 'Private preview · Vercel sign-in required',
-		visual: 'WJ',
-		tone: 'rust',
-		href: 'https://workout-qxqmdltv5-cvuletich.vercel.app',
-		actionLabel: 'Open Private Preview',
-		external: true,
-		projectSlug: 'workout-journal'
-	},
 	{
 		slug: 'sidequest',
 		name: 'SideQuest',

@@ -97,8 +97,7 @@
 		.case-prose p,
 		.sidequest-project__prose p,
 		.password-manager__prose p,
-		.notes-project__prose p,
-		.workout-journal__prose p
+		.notes-project__prose p
 	) {
 	font-size: 1.02rem;
 	line-height: 1.85;
@@ -108,26 +107,16 @@
 		.case-section,
 		.sidequest-project__section,
 		.password-manager__section,
-		.notes-project__section,
-		.workout-journal__section
+		.notes-project__section
 	) {
 	padding-block: clamp(3rem, 6vw, 5rem);
 }
-.project-reading :is(.notes-project__sidebar, .workout-journal__sidebar) {
+.project-reading .notes-project__sidebar {
 	padding: 1.5rem;
 }
-.project-reading
-	:is(.gallery-pair img, .notes-project__screenshots img, .workout-journal__screenshots img) {
+.project-reading :is(.gallery-pair img, .notes-project__screenshots img) {
 	border-radius: var(--radius);
 	box-shadow: 0 10px 25px #30281c0a;
-}
-.project-reading .workout-journal__screenshots {
-	grid-template-columns: 1fr;
-	gap: 2.5rem;
-}
-.project-reading .workout-journal__screenshots img {
-	aspect-ratio: auto;
-	height: auto;
 }
 .project-reading .project-evolution__grid {
 	gap: 3rem 2rem;
